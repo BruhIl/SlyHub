@@ -1,0 +1,535 @@
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local header = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local version = Instance.new("TextLabel")
+local mainlogo = Instance.new("ImageLabel")
+local close = Instance.new("TextButton")
+local minimize = Instance.new("TextButton")
+local loadingscreen = Instance.new("Frame")
+local loadingtitle = Instance.new("TextLabel")
+local loadingversion = Instance.new("TextLabel")
+local loadinglogo = Instance.new("ImageLabel")
+local loadingbarBG = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local loadingbarprogress = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local loadingwatermark = Instance.new("TextLabel")
+local minimizedarrow = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local arrow = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+
+-- MultiInject Check
+
+local CoreGui = game.CoreGui
+local WrappedGui = CoreGui:FindFirstChild("MultiPurposeGUI")
+
+if WrappedGui == nil then -- Inject
+	ScreenGui.Name = "MultiPurposeGUI" -- Search Coregui for this
+	ScreenGui.Parent = game.CoreGui
+	
+	-- Main GUI
+
+
+	main.Name = "main"
+	main.Parent = ScreenGui
+	main.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	main.Position = UDim2.new(0.545338452, 0, 0.514110446, 0)
+	main.Size = UDim2.new(0, 679, 0, 367)
+	main.Visible = false
+	main.ZIndex = 90
+	main.Active = true
+	main.Draggable = true
+
+	header.Name = "header"
+	header.Parent = main
+	header.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	header.BorderSizePixel = 0
+	header.Size = UDim2.new(0, 679, 0, 56)
+	header.ZIndex = 91
+
+	title.Name = "title"
+	title.Parent = header
+	title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	title.BackgroundTransparency = 1.000
+	title.BorderSizePixel = 0
+	title.Position = UDim2.new(0.0972017646, 0, 0.160714284, 0)
+	title.Size = UDim2.new(0, 199, 0, 37)
+	title.ZIndex = 92
+	title.Font = Enum.Font.Arcade
+	title.Text = "SlySploit"
+	title.TextColor3 = Color3.fromRGB(240, 240, 240)
+	title.TextSize = 40.000
+	title.TextWrapped = true
+	title.TextXAlignment = Enum.TextXAlignment.Left
+
+	version.Name = "version"
+	version.Parent = header
+	version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	version.BackgroundTransparency = 1.000
+	version.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	version.BorderSizePixel = 0
+	version.Position = UDim2.new(0.39027983, 0, 0.5, 0)
+	version.Size = UDim2.new(0, 41, 0, 18)
+	version.ZIndex = 92
+	version.Font = Enum.Font.TitilliumWeb
+	version.Text = "v 1.0.0"
+	version.TextColor3 = Color3.fromRGB(168, 168, 168)
+	version.TextScaled = true
+	version.TextSize = 20.000
+	version.TextWrapped = true
+	version.TextXAlignment = Enum.TextXAlignment.Left
+
+	mainlogo.Name = "mainlogo"
+	mainlogo.Parent = header
+	mainlogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	mainlogo.BackgroundTransparency = 1.000
+	mainlogo.BorderSizePixel = 0
+	mainlogo.Position = UDim2.new(0.0117820324, 0, 0.0535714328, 0)
+	mainlogo.Size = UDim2.new(0, 50, 0, 50)
+	mainlogo.ZIndex = 92
+	mainlogo.Image = "http://www.roblox.com/asset/?id=6771709231"
+
+	close.Name = "close"
+	close.Parent = header
+	close.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	close.BorderSizePixel = 0
+	close.Position = UDim2.new(0.963, 0, -0.0179999992, 1)
+	close.Size = UDim2.new(0, 25, 0, 25)
+	close.ZIndex = 92
+	close.Font = Enum.Font.SciFi
+	close.Text = "X"
+	close.TextColor3 = Color3.fromRGB(255, 255, 224)
+	close.TextSize = 14.000
+	close.TextWrapped = true
+
+	minimize.Name = "minimize"
+	minimize.Parent = header
+	minimize.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	minimize.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	minimize.BorderSizePixel = 0
+	minimize.Position = UDim2.new(0.924745262, 0, -0.0179999992, 1)
+	minimize.Size = UDim2.new(0, 25, 0, 25)
+	minimize.ZIndex = 92
+	minimize.Font = Enum.Font.SciFi
+	minimize.Text = "_"
+	minimize.TextColor3 = Color3.fromRGB(255, 255, 224)
+	minimize.TextSize = 14.000
+	minimize.TextWrapped = true
+
+
+	-- Loading Screen
+
+
+	loadingscreen.Name = "loadingscreen"
+	loadingscreen.Parent = ScreenGui
+	loadingscreen.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	loadingscreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingscreen.Position = UDim2.new(0.5, -84,0.5, -65)
+	loadingscreen.Size = UDim2.new(0,168,0, 130)
+	loadingscreen.ZIndex = 90
+
+	loadingtitle.Name = "loadingtitle"
+	loadingtitle.Parent = loadingscreen
+	loadingtitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingtitle.BackgroundTransparency = 1.000
+	loadingtitle.BorderSizePixel = 0
+	loadingtitle.Position = UDim2.new(0.214254841, 0, 0.830734372, 0)
+	loadingtitle.Size = UDim2.new(0, 199, 0, 37)
+	loadingtitle.ZIndex = 91
+	loadingtitle.Font = Enum.Font.Arcade
+	loadingtitle.Text = "SlySploit"
+	loadingtitle.TextColor3 = Color3.fromRGB(240, 240, 240)
+	loadingtitle.TextSize = 40.000
+	loadingtitle.TextWrapped = true
+	loadingtitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	loadingversion.Name = "loadingversion"
+	loadingversion.Parent = loadingtitle
+	loadingversion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingversion.BackgroundTransparency = 1.000
+	loadingversion.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	loadingversion.BorderSizePixel = 0
+	loadingversion.Position = UDim2.new(0.995261788, 0, 0.5108217, 0)
+	loadingversion.Size = UDim2.new(0, 41, 0, 18)
+	loadingversion.ZIndex = 91
+	loadingversion.Font = Enum.Font.TitilliumWeb
+	loadingversion.Text = "v 1.0.0"
+	loadingversion.TextColor3 = Color3.fromRGB(168, 168, 168)
+	loadingversion.TextScaled = true
+	loadingversion.TextSize = 20.000
+	loadingversion.TextWrapped = true
+	loadingversion.TextXAlignment = Enum.TextXAlignment.Left
+
+	loadinglogo.Name = "loadinglogo"
+	loadinglogo.Parent = loadingscreen
+	loadinglogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadinglogo.BackgroundTransparency = 1.000
+	loadinglogo.BorderSizePixel = 0
+	loadinglogo.Position = UDim2.new(0.379318088, 0, 0.0173541252, 0)
+	loadinglogo.Size = UDim2.new(0, 100, 0, 100)
+	loadinglogo.ZIndex = 92
+	loadinglogo.Image = "http://www.roblox.com/asset/?id=6771709231"
+
+	loadingbarBG.Name = "loadingbarBG"
+	loadingbarBG.Parent = loadingscreen
+	loadingbarBG.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	loadingbarBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingbarBG.Position = UDim2.new(0.214254901, 0, 0.730382323, 0)
+	loadingbarBG.Size = UDim2.new(0, 239, 0, 11)
+	loadingbarBG.ZIndex = 91
+
+	UICorner.Parent = loadingbarBG
+
+	loadingbarprogress.Name = "loadingbarprogress"
+	loadingbarprogress.Parent = loadingbarBG
+	loadingbarprogress.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+	loadingbarprogress.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingbarprogress.Position = UDim2.new(-0.00331837172, 0, -0.0878018439, 0)
+	loadingbarprogress.Size = UDim2.new(0, 1, 0, 11)
+	loadingbarprogress.ZIndex = 92
+
+	UICorner_2.Parent = loadingbarprogress
+
+	loadingwatermark.Name = "loadingwatermark"
+	loadingwatermark.Parent = loadingscreen
+	loadingwatermark.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingwatermark.BackgroundTransparency = 1.000
+	loadingwatermark.BorderSizePixel = 0
+	loadingwatermark.Position = UDim2.new(0.209523812, 0, 0.688128769, 0)
+	loadingwatermark.Size = UDim2.new(0, 241, 0, 50)
+	loadingwatermark.ZIndex = 92
+	loadingwatermark.Font = Enum.Font.TitilliumWeb
+	loadingwatermark.Text = "Made by: CrumCusader"
+	loadingwatermark.TextColor3 = Color3.fromRGB(240, 240, 240)
+	loadingwatermark.TextSize = 20.000
+	loadingwatermark.TextTransparency = 1.000
+	loadingwatermark.TextWrapped = true
+
+
+	-- Re-Open Arrow
+
+
+	minimizedarrow.Name = "minimizedarrow"
+	minimizedarrow.Parent = ScreenGui
+	minimizedarrow.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	minimizedarrow.Position = UDim2.new(-0.0146871004, 0, 0.45644173, 0)
+	minimizedarrow.Size = UDim2.new(0, 43, 0, 70)
+	minimizedarrow.Visible = false
+	minimizedarrow.ZIndex = 90
+
+	UICorner_3.Parent = minimizedarrow
+
+	arrow.Name = "arrow"
+	arrow.Parent = minimizedarrow
+	arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	arrow.BackgroundTransparency = 1.000
+	arrow.Position = UDim2.new(-0.0149999997, 0, -0.00114285946, 0)
+	arrow.Size = UDim2.new(0, 43, 0, 70)
+	arrow.ZIndex = 91
+	arrow.Font = Enum.Font.TitilliumWeb
+	arrow.Text = "▶"
+	arrow.TextColor3 = Color3.fromRGB(240, 240, 240)
+	arrow.TextScaled = true
+	arrow.TextSize = 14.000
+	arrow.TextWrapped = true
+	arrow.TextXAlignment = Enum.TextXAlignment.Right
+
+	UICorner_4.Parent = arrow
+
+
+	-- GUI CONTROLLER SCRIPT
+
+
+	local MainOpen = false
+	local LoadingOpen = false
+	local ArrowOpen = false
+
+
+	-- Minimize Main GUI
+
+
+	minimize.MouseButton1Click:Connect(function()
+		-- Tween smaller, then tween position to arrow. Make arrow visible and then Main invisible
+
+		main.Visible = false
+		minimizedarrow.Visible = true
+	end)
+
+
+	-- Minimize Main GUI
+
+
+	arrow.MouseButton1Click:Connect(function()
+		-- Make Main visible and arrow invisible. Tween main position to original location, tween it to be wider, then tween it in a dropdown fashion after
+
+		minimizedarrow.Visible = false
+		main.Visible = true
+	end)
+
+
+	-- Close / Destroy / Unhook Script
+
+
+	close.MouseButton1Click:Connect(function()
+		-- Tween out then destroy
+
+		close.Parent.Parent.Parent:Destroy() -- Entire GUI
+	end)
+
+
+	-- Auto Loading
+
+	loadingscreen.Transparency = 1
+	loadingbarBG.Transparency = 1
+	loadingbarprogress.Transparency = 1
+	loadinglogo.ImageTransparency = 1
+	loadingtitle.TextTransparency = 1
+	loadingversion.TextTransparency = 1
+	loadingwatermark.TextTransparency = 1
+
+	local StarterGui = game:GetService("StarterGui")
+
+	StarterGui:SetCore("SendNotification", {
+		Title = "Injecting...";
+		Text = "The script is being injected";
+		Duration = 3;
+	})
+
+	wait(2)
+
+	-- TweenInfo IN
+
+	local LoadScreenTweenInInfo = TweenInfo.new(
+
+		1, -- Length
+		Enum.EasingStyle.Sine,
+		Enum.EasingDirection.Out,
+		0, -- Repeat Amount
+		false, -- Should it repeat?
+		0 -- Delay between repeated Tweens
+
+	)
+
+	local BlurTweenInfo = TweenInfo.new(
+
+		2, -- Length
+		Enum.EasingStyle.Linear,
+		Enum.EasingDirection.Out,
+		0, -- Repeat Amount
+		false, -- Should it repeat?
+		0 -- Delay between repeated Tweens
+
+	)
+
+	local ProgressTweenInfo = TweenInfo.new(
+
+		4, -- Length
+		Enum.EasingStyle.Quint,
+		Enum.EasingDirection.Out,
+		0, -- Repeat Amount
+		false, -- Should it repeat?
+		0 -- Delay between repeated Tweens
+
+	)
+
+	local LoadScreenTweenInProperties = {
+
+		Transparency = 0
+
+	}
+
+	local LoadScreenSizeTweenInProperties = {
+
+		Position = UDim2.new(0.5 , -210 , 0.5 , -248),
+		Size = UDim2.new(0, 420, 0, 497)
+
+	}
+
+	local LoadTextTweenInProperties = {
+
+		TextTransparency = 0
+
+	}
+
+	local LoadImageTweenInProperties = {
+
+		ImageTransparency = 0
+
+	}
+
+	local BlurTweenInProperties = {
+
+		Size = 20
+
+	}
+
+	local ProgressTweenProperties = {
+
+		Size = UDim2.new(0, 239,0, 11)
+
+	}
+
+	-- TweenInfo OUT
+
+	local LoadScreenTransparencyTweenOutProperties = {
+
+		Transparency = 1
+
+	}
+
+	local LoadScreenSizeTweenOutProperties = {
+
+		Position = UDim2.new(0.5, -84,0.5, -65),
+		Size = UDim2.new(0,168,0, 130)
+
+	}
+
+	local LoadTextTweenOutProperties = {
+
+		TextTransparency = 1
+
+	}
+
+	local LoadImageTweenOutProperties = {
+
+		ImageTransparency = 1
+
+	}
+
+	local BlurTweenOutProperties = {
+
+		Size = 0
+
+	}
+
+	-- Tween Creation
+
+	local TS = game:GetService("TweenService")
+	local Lighting = game:GetService("Lighting")
+	local Blur = Instance.new("BlurEffect")
+	Blur.Parent = Lighting
+	Blur.Size = 0
+
+	local BlurTweenIn = TS:Create(Blur, BlurTweenInfo, BlurTweenInProperties) -- Blur tweens out with loading screen
+	local BlurTweenOut = TS:Create(Blur, BlurTweenInfo, BlurTweenOutProperties) -- Blur tweens out with loading screen
+
+	local ProgressTween = TS:Create(loadingbarprogress, ProgressTweenInfo, ProgressTweenProperties)
+
+	local LoadScreenTransparencyTweenIn = TS:Create(loadingscreen, LoadScreenTweenInInfo, LoadScreenTweenInProperties)
+	local LoadScreenSizeTweenIn = TS:Create(loadingscreen, LoadScreenTweenInInfo, LoadScreenSizeTweenInProperties)
+	local LoadScreenTransparencyTweenOut = TS:Create(loadingscreen, LoadScreenTweenInInfo, LoadScreenTransparencyTweenOutProperties)
+	local LoadScreenSizeTweenOut = TS:Create(loadingscreen, LoadScreenTweenInInfo, LoadScreenSizeTweenOutProperties)
+
+	local LoadingBarBGTweenIn = TS:Create(loadingbarBG, LoadScreenTweenInInfo, LoadScreenTweenInProperties)
+	local LoadingBarProgressTweenIn = TS:Create(loadingbarprogress, LoadScreenTweenInInfo, LoadScreenTweenInProperties)
+	local LoadingBarBGTweenOut = TS:Create(loadingbarBG, LoadScreenTweenInInfo, LoadScreenTransparencyTweenOutProperties)
+	local LoadingBarProgressTweenOut = TS:Create(loadingbarprogress, LoadScreenTweenInInfo, LoadScreenTransparencyTweenOutProperties)
+
+	local LoadingLogoTweenIn = TS:Create(loadinglogo, LoadScreenTweenInInfo, LoadImageTweenInProperties)
+	local LoadingLogoTweenOut = TS:Create(loadinglogo, LoadScreenTweenInInfo, LoadImageTweenOutProperties)
+
+	local LoadingTitleTweenIn = TS:Create(loadingtitle, LoadScreenTweenInInfo, LoadTextTweenInProperties)
+	local LoadingTitleTweenOut = TS:Create(loadingtitle, LoadScreenTweenInInfo, LoadTextTweenOutProperties)
+
+	local LoadingVersionTweenIn = TS:Create(loadingversion, LoadScreenTweenInInfo, LoadTextTweenInProperties)
+	local LoadingVersionTweenOut = TS:Create(loadingversion, LoadScreenTweenInInfo, LoadTextTweenOutProperties)
+
+	local LoadingWatermarkTweenIn = TS:Create(loadingwatermark, LoadScreenTweenInInfo, LoadTextTweenInProperties)
+	local LoadingWatermarkTweenOut = TS:Create(loadingwatermark, LoadScreenTweenInInfo, LoadTextTweenOutProperties)
+
+	BlurTweenIn:Play()
+
+	wait(1) -- Delay before loading screen begins to appear
+
+	-- Tween in the small background just after the blur, then arrange it to full size. Then Tween in everything else
+
+	LoadScreenTransparencyTweenIn:Play()
+
+	wait(1) -- Delay Before GUI size and position Tween begins
+
+	LoadScreenSizeTweenIn:Play()
+
+	wait(1)
+
+	LoadingBarBGTweenIn:Play()
+	LoadingBarProgressTweenIn:Play()
+	LoadingLogoTweenIn:Play()
+	LoadingTitleTweenIn:Play()
+	LoadingVersionTweenIn:Play()
+
+	wait(0.5)
+
+	ProgressTween:Play()
+
+	wait(4.5)
+
+	LoadingBarBGTweenOut:Play()
+	LoadingBarProgressTweenOut:Play()
+
+	wait(0.5)
+
+	LoadingWatermarkTweenIn:Play()
+
+	wait(3)
+
+	-- Tween Everything out and then main in
+
+	LoadingLogoTweenOut:Play()
+	LoadingTitleTweenOut:Play()
+	LoadingVersionTweenOut:Play()
+	LoadingWatermarkTweenOut:Play()
+
+	wait(1)
+
+	LoadScreenSizeTweenOut:Play()
+	BlurTweenOut:Play()
+
+	wait(1)
+
+	LoadScreenTransparencyTweenOut:Play()
+
+	wait(1)
+
+	local bindable = Instance.new("BindableFunction")
+
+	function bindable.OnInvoke()
+
+		wait(1)
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Credits:";
+			Text = "Made by: CrumCusader";
+			Button1 = "Ok!";
+			Duration = 600;
+		})
+	end
+
+	StarterGui:SetCore("SendNotification", {
+		Title = "Success!";
+		Text = "The script has been injected";
+		Callback = bindable,
+		Button1 = "Thanks";
+		Duration = 600;
+	})
+
+	loadingscreen.Transparency = 1 -- Tween Out again
+	loadingscreen.Visible = false
+	main.Visible = true
+
+	Blur:Destroy()
+else -- Prevent
+	
+	local StarterGui = game:GetService("StarterGui")
+	
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You have already injected this script!";
+		Button1 = "Sorry";
+		Duration = 600;
+	})
+	
+end
