@@ -300,7 +300,6 @@ UICornerFPS2.Parent = FPSToggleButton
 --// Auto Expand Frame Size
 
 local FrameCheck = coroutine.create(function()
-	print("ran")
 	for i, v in pairs(CheatArea:GetChildren()) do
 		if v.Name ~= "GameTitle" then
 			CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 50)
@@ -1415,3 +1414,4 @@ end)
 MainGuiLoaded = true
 
 coroutine.resume(FrameCheck)
+CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 50)
