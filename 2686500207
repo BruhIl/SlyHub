@@ -17,8 +17,8 @@ if RunService:IsStudio() then
 	script:Destroy()
 end
 
-local PlaceId = game.PlaceId
-if PlaceId ~= tonumber("2686500207") then
+local PlaceId = tostring(game.PlaceId)
+if PlaceId ~= "2686500207" then
 	
 	StarterGui:SetCore("SendNotification", {
 		Title = "Notice:";
