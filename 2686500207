@@ -1,6 +1,21 @@
 repeat task.wait() until game:IsLoaded()
 local Players = game:GetService("Players")
 
+local RunService = game:GetService("RunService")
+local StarterGui = game:GetService("StarterGui")
+
+if RunService:IsStudio() then
+
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You cannot run this script in studio!";
+		Button1 = "Sorry";
+		Duration = 600;
+	})
+	task.wait(0.5)
+	script:Destroy()
+end
+
 local MainGuiLoaded = false
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -308,8 +323,6 @@ local FrameCheck = coroutine.create(function()
 	CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 1)
 end)
 
-
-
 local CoreGui = game.CoreGui
 
 ScreenGui.Name = "MultiPurposeGUI" -- Search Coregui for this
@@ -541,11 +554,9 @@ Notice.Visible = false
 
 -- GUI CONTROLLER SCRIPT
 
-
 local MainOpen = false
 local LoadingOpen = false
 local ArrowOpen = false
-
 
 -- Minimize Main GUI
 
@@ -588,8 +599,6 @@ loadinglogo.ImageTransparency = 1
 loadingtitle.TextTransparency = 1
 loadingversion.TextTransparency = 1
 loadingwatermark.TextTransparency = 1
-
-local StarterGui = game:GetService("StarterGui")
 
 StarterGui:SetCore("SendNotification", {
 	Title = "Injecting...";
@@ -1150,6 +1159,7 @@ AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 
 		TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
 		Lighting:WaitForChild("TS").Value = false -- Updates it
+		Lighting:WaitForChild("Timestop").Value = false
 
 	else
 		AntiTSEnabled = false
@@ -1164,7 +1174,7 @@ AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 	TSValue.Changed:Connect(function()
 		if AntiTSEnabled and TSValue.Value == true then
 			TSValue.Value = false
-			--TSLighting.Enabled = false
+			TSLighting.Enabled = false
 
 			local TSNotice = Notice:Clone()
 			TSNotice.Parent = Notice.Parent
