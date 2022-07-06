@@ -1068,7 +1068,6 @@ PlayerESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 
 						local PlayerESPText = Instance.new("TextLabel")
 						PlayerESPText.Text = v.Name
-						PlayerESPText.TextColor = BrickColor.new("White")
 						PlayerESPText.TextStrokeTransparency = 0
 						PlayerESPText.TextStrokeColor3 = Color3.new(0, 0, 0)
 						PlayerESPText.Visible = true
@@ -1076,6 +1075,15 @@ PlayerESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 						PlayerESPText.BackgroundTransparency = 1
 						PlayerESPText.ZIndex = 2
 						PlayerESPText.Parent = PlayerESPFrame
+						
+						local GroupRole = Player:GetRoleInGroup(4516503)
+
+						if GroupRole ~= "Member" and GroupRole ~= "Guest" then -- If high ranking it glows yellow
+							PlayerESPText.TextColor = BrickColor.new("Gold")
+						else
+							PlayerESPText.TextColor = BrickColor.new("White")
+						end
+						
 					end
 				end
 			end
