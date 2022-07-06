@@ -629,103 +629,101 @@ task.wait(1)
 
 -- Tweens
 
-local TS = nil
 if WrongGame == false then
 	local TS = game:GetService("TweenService")
-end
+	local Lighting = game:GetService("Lighting")
+	local Blur = Instance.new("BlurEffect")
+	Blur.Parent = Lighting
+	Blur.Size = 0
 
-local Lighting = game:GetService("Lighting")
-local Blur = Instance.new("BlurEffect")
-Blur.Parent = Lighting
-Blur.Size = 0
+	TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 20}):Play() -- Blur tweens in with loading screen
+	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
 
-TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 20}):Play() -- Blur tweens in with loading screen
-TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
+	task.wait(1) -- Delay Before GUI size and position Tween begins
 
-task.wait(1) -- Delay Before GUI size and position Tween begins
+	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5 , -210 , 0.5 , -248), Size = UDim2.new(0, 420, 0, 497)}):Play()
 
-TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5 , -210 , 0.5 , -248), Size = UDim2.new(0, 420, 0, 497)}):Play()
+	task.wait(0.5)
 
-task.wait(0.5)
-
-TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
-TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
-TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 0}):Play()
-TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-
-task.wait(1)
-
-TS:Create(loadingbarprogress, TweenInfo.new(2.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0, 239,0, 11)}):Play()
-
-task.wait(2.5)
-
-TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-
-task.wait(1)
-
-TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-
-task.wait(2)
-
--- Tween Everything out and then main in
-
-TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
-TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-
-task.wait(1)
-
-TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5, -84,0.5, -65), Size = UDim2.new(0,168,0, 130)}):Play()
-TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 0}):Play()
-
-task.wait(1)
-
-TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-
-task.wait(1)
-
-local SettingsReveal = coroutine.create(function()
-	SettingsButton.Visible = true
-
-	TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
-
-	task.wait(2)
-
-	TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
-end)
-
-coroutine.resume(SettingsReveal)
-
-local bindable = Instance.new("BindableFunction")
-
-function bindable.OnInvoke()
+	TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
+	TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
+	TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 0}):Play()
+	TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
+	TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
 
 	task.wait(1)
 
+	TS:Create(loadingbarprogress, TweenInfo.new(2.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0, 239,0, 11)}):Play()
+
+	task.wait(2.5)
+
+	TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
+	TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
+
+	task.wait(1)
+
+	TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
+
+	task.wait(2)
+
+	-- Tween Everything out and then main in
+
+	TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
+	TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
+	TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
+	TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
+
+	task.wait(1)
+
+	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5, -84,0.5, -65), Size = UDim2.new(0,168,0, 130)}):Play()
+	TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 0}):Play()
+
+	task.wait(1)
+
+	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
+
+	task.wait(1)
+
+	local SettingsReveal = coroutine.create(function()
+		SettingsButton.Visible = true
+
+		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
+
+		task.wait(2)
+
+		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
+	end)
+
+	coroutine.resume(SettingsReveal)
+
+	local bindable = Instance.new("BindableFunction")
+
+	function bindable.OnInvoke()
+
+		task.wait(1)
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Credits:";
+			Text = "Made by: CrumCusader";
+			Button1 = "Ok!";
+			Duration = 600;
+		})
+	end
+
 	StarterGui:SetCore("SendNotification", {
-		Title = "Credits:";
-		Text = "Made by: CrumCusader";
-		Button1 = "Ok!";
+		Title = "Success!";
+		Text = "The script has been injected";
+		Callback = bindable,
+		Button1 = "Thanks";
 		Duration = 600;
 	})
+
+	loadingscreen.Transparency = 1 -- Tween Out again
+	loadingscreen.Visible = false
+	main.Visible = true
+
+	Blur:Destroy()
 end
-
-StarterGui:SetCore("SendNotification", {
-	Title = "Success!";
-	Text = "The script has been injected";
-	Callback = bindable,
-	Button1 = "Thanks";
-	Duration = 600;
-})
-
-loadingscreen.Transparency = 1 -- Tween Out again
-loadingscreen.Visible = false
-main.Visible = true
-
-Blur:Destroy()
 
 
 --// All Script Requirements
@@ -739,6 +737,7 @@ repeat task.wait() until Character.HumanoidRootPart
 local HRP = Character.HumanoidRootPart
 
 local TS = game:GetService("TweenService")
+local Lighting = game:GetService("Lighting")
 
 --// Slot Formats
 
@@ -1190,7 +1189,6 @@ AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 		TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
 	end
 
-	local Lighting = game:GetService("Lighting")
 	local TSValue = Lighting:WaitForChild("TS")
 	local TSLighting = Lighting:WaitForChild("Timestop")
 
