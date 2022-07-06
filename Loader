@@ -44,7 +44,12 @@ if WrappedGui == nil and IsStudio == false then -- If not already injected and n
 
 		-- load a general script gui
 
-		print("Not available")
+		StarterGui:SetCore("SendNotification", {
+			Title = "Notice:";
+			Text = "Currently there isn't a script I have made for this game, so here are some general scripts (Be careful with these)";
+			Button1 = "I Understand";
+			Duration = 600;
+		})
 
 	end
 elseif WrappedGui ~= nil then -- If already injected
