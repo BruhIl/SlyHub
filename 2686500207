@@ -1149,6 +1149,7 @@ AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 		AntiTSEnabled = true
 
 		TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+		Lighting:WaitForChild("TSValue").Value = true -- Updates it
 
 	else
 		AntiTSEnabled = false
@@ -1163,7 +1164,7 @@ AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 	TSValue.Changed:Connect(function()
 		if AntiTSEnabled and TSValue.Value == true then
 			TSValue.Value = false
-			TSLighting.Enabled = false
+			--TSLighting.Enabled = false
 
 			local TSNotice = Notice:Clone()
 			TSNotice.Parent = Notice.Parent
