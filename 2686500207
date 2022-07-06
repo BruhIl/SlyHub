@@ -16,6 +16,24 @@ if RunService:IsStudio() then
 	script:Destroy()
 end
 
+local PlaceId = game.PlaceId
+if PlaceId ~= "2686500207" then
+	
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You tried to manually inject the incorrect script for this game. Just use the loader, it's easier for you and automatic. The script of the loader has been copied to your clipboard! (Just paste this in your executor)";
+		Button1 = "Ok!";
+		Duration = 600;
+	})
+	
+	local Copypaste = Instance.new("StringValue")
+	Copypaste.Value = loadstring(game:HttpGet("https://raw.githubusercontent.com/BruhIl/SlyHub/main/Loader"))()
+	print(Copypaste.Value)
+
+	task.wait(0.5)
+	script:Destroy()
+end
+
 local MainGuiLoaded = false
 
 local ScreenGui = Instance.new("ScreenGui")
