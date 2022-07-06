@@ -18,7 +18,7 @@ if RunService:IsStudio() then
 end
 
 local PlaceId = game.PlaceId
-if PlaceId ~= "2686500207" then
+if PlaceId ~= tonumber("2686500207") then
 	
 	StarterGui:SetCore("SendNotification", {
 		Title = "Notice:";
