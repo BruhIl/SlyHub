@@ -1,0 +1,59 @@
+repeat task.wait() until game:IsLoaded() -- Make key system, obfuscate
+
+--// Requirements
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local StarterGui = game:GetService("StarterGui")
+local PlaceID = game.PlaceId
+
+local IsStudio = false
+
+--// Table
+
+local GameListTable = {
+	"2686500207" -- A Bizarre Day
+}
+
+--// Viability Check (Checks if studio or already injected)
+
+if RunService:IsStudio() then
+	IsStudio = true
+	
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You cannot run this script in studio!";
+		Button1 = "Sorry";
+		Duration = 600;
+	})
+	task.wait(0.5)
+	script:Destroy()
+end
+
+local CoreGui = game.CoreGui
+
+local WrappedGui = CoreGui:FindFirstChild("MultiPurposeGUI")
+
+if WrappedGui == nil and IsStudio == false then -- If not already injected and not in Studio
+	if table.find(GameListTable, tostring(PlaceID)) then -- If it is a valid game
+		print("This Game is part of our database")
+
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BruhIl/SlyHub/main/"..PlaceID))()
+
+	else
+
+		-- load a general script gui
+
+		print("Not available")
+
+	end
+elseif WrappedGui ~= nil then -- If already injected
+
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You have already injected this script!";
+		Button1 = "Sorry";
+		Duration = 600;
+	})
+	
+end
