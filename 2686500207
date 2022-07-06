@@ -1,5 +1,3 @@
-print("Loaded ABA")
-
 repeat task.wait() until game:IsLoaded()
 local Players = game:GetService("Players")
 
@@ -302,8 +300,9 @@ UICornerFPS2.Parent = FPSToggleButton
 --// Auto Expand Frame Size
 
 local FrameCheck = coroutine.create(function()
+	print("ran")
 	for i, v in pairs(CheatArea:GetChildren()) do
-		if v.Name ~= "GameTitle" and v.Name ~= game.Name then
+		if v.Name ~= "GameTitle" then
 			CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 50)
 		end
 	end
@@ -1413,6 +1412,6 @@ end)
 
 --// Scrolling Gui Auto Scale
 
-repeat task.wait() until MainGuiLoaded
+MainGuiLoaded = true
 
 coroutine.resume(FrameCheck)
