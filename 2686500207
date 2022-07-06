@@ -3,6 +3,7 @@ local Players = game:GetService("Players")
 
 local RunService = game:GetService("RunService")
 local StarterGui = game:GetService("StarterGui")
+local WrongGame = false
 
 if RunService:IsStudio() then
 
@@ -21,17 +22,15 @@ if PlaceId ~= "2686500207" then
 	
 	StarterGui:SetCore("SendNotification", {
 		Title = "Notice:";
-		Text = "You tried to manually inject the incorrect script for this game. Just use the loader, it's easier for you and automatic. The script of the loader has been copied to your clipboard! (Just paste this in your executor)";
+		Text = "You tried to manually inject the incorrect script for this game. Just use the loader, it's easier for you. The link to it has been copied";
 		Button1 = "Ok!";
 		Duration = 600;
 	})
 	
-	local Copypaste = Instance.new("StringValue")
-	Copypaste.Value = loadstring(game:HttpGet("https://raw.githubusercontent.com/BruhIl/SlyHub/main/Loader"))()
-	print(Copypaste.Value)
+	setclipboard("https://raw.githubusercontent.com/BruhIl/SlyHub/main/Loader")
 
-	task.wait(0.5)
 	script:Destroy()
+	WrongGame = true
 end
 
 local MainGuiLoaded = false
@@ -618,17 +617,23 @@ loadingtitle.TextTransparency = 1
 loadingversion.TextTransparency = 1
 loadingwatermark.TextTransparency = 1
 
-StarterGui:SetCore("SendNotification", {
-	Title = "Injecting...";
-	Text = "The script is being injected";
-	Duration = 3;
-})
+if WrongGame == false then
+	StarterGui:SetCore("SendNotification", {
+		Title = "Injecting...";
+		Text = "The script is being injected";
+		Duration = 3;
+	})
+end
 
 task.wait(1)
 
 -- Tweens
 
-local TS = game:GetService("TweenService")
+local TS = nil
+if WrongGame == false then
+	local TS = game:GetService("TweenService")
+end
+
 local Lighting = game:GetService("Lighting")
 local Blur = Instance.new("BlurEffect")
 Blur.Parent = Lighting
