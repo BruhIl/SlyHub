@@ -305,7 +305,7 @@ local FrameCheck = coroutine.create(function()
 			CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 50)
 		end
 	end
-	CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 25)
+	CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 1)
 end)
 
 
