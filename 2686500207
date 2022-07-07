@@ -4,6 +4,7 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local StarterGui = game:GetService("StarterGui")
 local WrongGame = false
+local Duplicate = false
 
 if RunService:IsStudio() then
 
@@ -31,6 +32,21 @@ if PlaceId ~= "2686500207" then
 
 	script:Destroy()
 	WrongGame = true
+end
+
+local WrappedGui = game.CoreGui:FindFirstChild("MultiPurposeGUI")
+if WrappedGui ~= nil then
+	Duplicate = true
+	
+	StarterGui:SetCore("SendNotification", {
+		Title = "Notice:";
+		Text = "You tried to manually inject the script while another instance was active. Just use the loader, it's easier for you. The link to it has been copied";
+		Duration = 600;
+	})
+	
+	setclipboard("https://raw.githubusercontent.com/BruhIl/SlyHub/main/Loader")
+	
+	script:Destroy()
 end
 
 local MainGuiLoaded = false
@@ -617,7 +633,7 @@ loadingtitle.TextTransparency = 1
 loadingversion.TextTransparency = 1
 loadingwatermark.TextTransparency = 1
 
-if WrongGame == false then
+if WrongGame == false and Duplicate == false then
 	StarterGui:SetCore("SendNotification", {
 		Title = "Injecting...";
 		Text = "The script is being injected";
@@ -629,7 +645,7 @@ task.wait(1)
 
 -- Tweens
 
-if WrongGame == false then
+if WrongGame == false and Duplicate == false then
 	local TS = game:GetService("TweenService")
 	local Lighting = game:GetService("Lighting")
 	local Blur = Instance.new("BlurEffect")
