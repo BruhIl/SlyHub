@@ -40,7 +40,8 @@ if WrappedGui ~= nil then
 	
 	StarterGui:SetCore("SendNotification", {
 		Title = "Notice:";
-		Text = "You tried to manually inject the script while another instance was active. Just use the loader, it's easier for you. The link to it has been copied";
+		Text = "You tried to manually inject the script while another instance was active. Just use the loader. The link to it has been copied";
+		Button1 = "Ok!";
 		Duration = 600;
 	})
 	
