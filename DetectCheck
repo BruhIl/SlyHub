@@ -8,7 +8,7 @@ local Value = Instance.new("TextLabel")
 --Properties:
 
 Detection.Name = "Detection"
-Detection.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Detection.Parent = game.CoreGui
 Detection.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Value.Name = "Value"
