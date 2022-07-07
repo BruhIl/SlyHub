@@ -1,0 +1,65 @@
+--// Gui
+
+-- Instances:
+
+local Detection = Instance.new("ScreenGui")
+local Value = Instance.new("TextLabel")
+
+--Properties:
+
+Detection.Name = "Detection"
+Detection.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Detection.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Value.Name = "Value"
+Value.Parent = Detection
+Value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Value.BackgroundTransparency = 1.000
+Value.BorderSizePixel = 0
+Value.Size = UDim2.new(0, 117, 0, 50)
+Value.ZIndex = 100
+Value.Font = Enum.Font.Arcade
+Value.Text = "Loading..."
+Value.TextColor3 = Color3.fromRGB(255, 255, 255)
+Value.TextSize = 16.000
+Value.TextStrokeTransparency = 0.000
+Value.TextWrapped = true
+Value.Visible = false
+
+--// Functions
+
+local function Detected()
+	Value.Text = "DETECTED"
+	Value.TextColor3 = Color3.fromRGB(255, 0, 4)
+	Value.Visible = true
+end
+
+local function Undetected()
+	Value.Text = "UNDETECTED"
+	Value.TextColor3 = Color3.fromRGB(0, 255, 0)
+	Value.Visible = true
+end
+
+local function Unknown()
+	Value.Text = "UNKNOWN"
+	Value.TextColor3 = Color3.fromRGB(255, 85, 0)
+	Value.Visible = true
+end
+
+--// Table of games
+
+local Gamelist = {
+	"2686500207" -- A Bizarre Day
+}
+
+local PlaceID = tostring(game.PlaceId)
+
+--// Detection
+
+if table.find(Gamelist, PlaceID) then -- If Valid game
+	
+	if PlaceID == "2686500207" then -- A bizarre day
+		Undetected()
+	end
+	
+end
