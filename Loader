@@ -39,6 +39,7 @@ if WrappedGui == nil and IsStudio == false then -- If not already injected and n
 		print("This Game is part of our database")
 
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/BruhIl/SlyHub/main/"..PlaceID))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/BruhIl/SlyHub/main/DetectCheck"))()
 
 	else
 
