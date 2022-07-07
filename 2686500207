@@ -52,1423 +52,1425 @@ end
 
 local MainGuiLoaded = false
 
-local ScreenGui = Instance.new("ScreenGui")
-local main = Instance.new("Frame")
-local header = Instance.new("Frame")
-local title = Instance.new("TextLabel")
-local version = Instance.new("TextLabel")
-local mainlogo = Instance.new("ImageLabel")
-local close = Instance.new("TextButton")
-local minimize = Instance.new("TextButton")
-local loadingscreen = Instance.new("Frame")
-local loadingtitle = Instance.new("TextLabel")
-local loadingversion = Instance.new("TextLabel")
-local loadinglogo = Instance.new("ImageLabel")
-local loadingbarBG = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local loadingbarprogress = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local loadingwatermark = Instance.new("TextLabel")
-local minimizedarrow = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local arrow = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local Notice = Instance.new("TextLabel")
-local SettingsButton = Instance.new("ImageButton")
+if Duplicate == false and WrongGame == false then
+	local ScreenGui = Instance.new("ScreenGui")
+	local main = Instance.new("Frame")
+	local header = Instance.new("Frame")
+	local title = Instance.new("TextLabel")
+	local version = Instance.new("TextLabel")
+	local mainlogo = Instance.new("ImageLabel")
+	local close = Instance.new("TextButton")
+	local minimize = Instance.new("TextButton")
+	local loadingscreen = Instance.new("Frame")
+	local loadingtitle = Instance.new("TextLabel")
+	local loadingversion = Instance.new("TextLabel")
+	local loadinglogo = Instance.new("ImageLabel")
+	local loadingbarBG = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local loadingbarprogress = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local loadingwatermark = Instance.new("TextLabel")
+	local minimizedarrow = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local arrow = Instance.new("TextButton")
+	local UICorner_4 = Instance.new("UICorner")
+	local Notice = Instance.new("TextLabel")
+	local SettingsButton = Instance.new("ImageButton")
 
--- Cheat Area
+	-- Cheat Area
 
-local CheatArea = Instance.new("ScrollingFrame")
-local GameTitle = Instance.new("TextLabel")
-local UIListLayout = Instance.new("UIListLayout")
+	local CheatArea = Instance.new("ScrollingFrame")
+	local GameTitle = Instance.new("TextLabel")
+	local UIListLayout = Instance.new("UIListLayout")
 
-ScreenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.IgnoreGuiInset = false
+	ScreenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	ScreenGui.IgnoreGuiInset = false
 
-CheatArea.Name = "CheatArea"
-CheatArea.Parent = main
-CheatArea.Active = true
-CheatArea.BackgroundColor3 = Color3.fromRGB(41, 44, 49)
-CheatArea.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CheatArea.BorderSizePixel = 1
-CheatArea.Position = UDim2.new(0.0294550806, 0, 0.193460494, 0)
-CheatArea.Size = UDim2.new(0, 639, 0, 281)
-CheatArea.CanvasSize = UDim2.new(UIListLayout.AbsoluteContentSize.Y)
-CheatArea.ZIndex = 91
-CheatArea.ScrollBarThickness = 8
+	CheatArea.Name = "CheatArea"
+	CheatArea.Parent = main
+	CheatArea.Active = true
+	CheatArea.BackgroundColor3 = Color3.fromRGB(41, 44, 49)
+	CheatArea.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CheatArea.BorderSizePixel = 1
+	CheatArea.Position = UDim2.new(0.0294550806, 0, 0.193460494, 0)
+	CheatArea.Size = UDim2.new(0, 639, 0, 281)
+	CheatArea.CanvasSize = UDim2.new(UIListLayout.AbsoluteContentSize.Y)
+	CheatArea.ZIndex = 91
+	CheatArea.ScrollBarThickness = 8
 
-GameTitle.Name = "GameTitle"
-GameTitle.Parent = CheatArea
-GameTitle.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-GameTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GameTitle.BorderSizePixel = 1
-GameTitle.Size = UDim2.new(0, 632, 0, 50)
-GameTitle.ZIndex = 92
-GameTitle.Font = Enum.Font.Arcade
-GameTitle.Text = "GAME NAME HERE GUI"
-GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-GameTitle.TextScaled = true
-GameTitle.TextSize = 24.000
-GameTitle.TextWrapped = true
+	GameTitle.Name = "GameTitle"
+	GameTitle.Parent = CheatArea
+	GameTitle.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	GameTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	GameTitle.BorderSizePixel = 1
+	GameTitle.Size = UDim2.new(0, 632, 0, 50)
+	GameTitle.ZIndex = 92
+	GameTitle.Font = Enum.Font.Arcade
+	GameTitle.Text = "GAME NAME HERE GUI"
+	GameTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	GameTitle.TextScaled = true
+	GameTitle.TextSize = 24.000
+	GameTitle.TextWrapped = true
 
-UIListLayout.Parent = CheatArea
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Parent = CheatArea
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-SettingsButton.Name = "SettingsButton"
-SettingsButton.Parent = ScreenGui
-SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SettingsButton.BackgroundTransparency = 1.000
-SettingsButton.BorderSizePixel = 0
-SettingsButton.Position = UDim2.new(1, -80, 1, -80)
-SettingsButton.Size = UDim2.new(0, 80, 0, 80)
-SettingsButton.ZIndex = 90
-SettingsButton.AutoButtonColor = false
-SettingsButton.Image = "http://www.roblox.com/asset/?id=1291127922"
-SettingsButton.ImageTransparency = 1 -- 0.7 when visible
-SettingsButton.Visible = false
+	SettingsButton.Name = "SettingsButton"
+	SettingsButton.Parent = ScreenGui
+	SettingsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsButton.BackgroundTransparency = 1.000
+	SettingsButton.BorderSizePixel = 0
+	SettingsButton.Position = UDim2.new(1, -80, 1, -80)
+	SettingsButton.Size = UDim2.new(0, 80, 0, 80)
+	SettingsButton.ZIndex = 90
+	SettingsButton.AutoButtonColor = false
+	SettingsButton.Image = "http://www.roblox.com/asset/?id=1291127922"
+	SettingsButton.ImageTransparency = 1 -- 0.7 when visible
+	SettingsButton.Visible = false
 
--- Settings Instances
+	-- Settings Instances
 
-local SettingsBackground = Instance.new("Frame")
-local SettingsHeader = Instance.new("Frame")
-local SettingsTitle = Instance.new("TextLabel")
-local UIListLayout3 = Instance.new("UIListLayout")
-local MemorySpoof = Instance.new("Frame")
-local MemSpoofTitle = Instance.new("TextLabel")
-local MemoryToggleBackground = Instance.new("Frame")
-local UICornerMemory = Instance.new("UICorner")
-local MemoryToggleButton = Instance.new("TextButton")
-local UICornerMemory2 = Instance.new("UICorner")
-local ClientKickBypass = Instance.new("Frame")
-local ClientKickBypassTitle = Instance.new("TextLabel")
-local KickToggleBackground = Instance.new("Frame")
-local UICornerKick = Instance.new("UICorner")
-local KickToggleButton = Instance.new("TextButton")
-local UICornerKick2 = Instance.new("UICorner")
-local FPSCounter = Instance.new("Frame")
-local FPSCounterTitle = Instance.new("TextLabel")
-local FPSToggleBackground = Instance.new("Frame")
-local UICornerFPS = Instance.new("UICorner")
-local FPSToggleButton = Instance.new("TextButton")
-local UICornerFPS2 = Instance.new("UICorner")
+	local SettingsBackground = Instance.new("Frame")
+	local SettingsHeader = Instance.new("Frame")
+	local SettingsTitle = Instance.new("TextLabel")
+	local UIListLayout3 = Instance.new("UIListLayout")
+	local MemorySpoof = Instance.new("Frame")
+	local MemSpoofTitle = Instance.new("TextLabel")
+	local MemoryToggleBackground = Instance.new("Frame")
+	local UICornerMemory = Instance.new("UICorner")
+	local MemoryToggleButton = Instance.new("TextButton")
+	local UICornerMemory2 = Instance.new("UICorner")
+	local ClientKickBypass = Instance.new("Frame")
+	local ClientKickBypassTitle = Instance.new("TextLabel")
+	local KickToggleBackground = Instance.new("Frame")
+	local UICornerKick = Instance.new("UICorner")
+	local KickToggleButton = Instance.new("TextButton")
+	local UICornerKick2 = Instance.new("UICorner")
+	local FPSCounter = Instance.new("Frame")
+	local FPSCounterTitle = Instance.new("TextLabel")
+	local FPSToggleBackground = Instance.new("Frame")
+	local UICornerFPS = Instance.new("UICorner")
+	local FPSToggleButton = Instance.new("TextButton")
+	local UICornerFPS2 = Instance.new("UICorner")
 
-local FPSCounterText = Instance.new("TextLabel")
+	local FPSCounterText = Instance.new("TextLabel")
 
-FPSCounterText.Name = "FPSCounter"
-FPSCounterText.Parent = ScreenGui
-FPSCounterText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-FPSCounterText.BackgroundTransparency = 1.000
-FPSCounterText.BorderSizePixel = 0
-FPSCounterText.Size = UDim2.new(0, 50, 0, 50)
-FPSCounterText.ZIndex = 99
-FPSCounterText.Font = Enum.Font.SciFi
-FPSCounterText.Text = "0"
-FPSCounterText.TextColor3 = Color3.fromRGB(0, 255, 0)
-FPSCounterText.TextScaled = true
-FPSCounterText.TextSize = 24
-FPSCounterText.TextWrapped = false
-FPSCounterText.Visible = false
-FPSCounterText.TextXAlignment = Enum.TextXAlignment.Left
-FPSCounterText.TextYAlignment = Enum.TextYAlignment.Top
+	FPSCounterText.Name = "FPSCounter"
+	FPSCounterText.Parent = ScreenGui
+	FPSCounterText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	FPSCounterText.BackgroundTransparency = 1.000
+	FPSCounterText.BorderSizePixel = 0
+	FPSCounterText.Size = UDim2.new(0, 50, 0, 50)
+	FPSCounterText.ZIndex = 99
+	FPSCounterText.Font = Enum.Font.SciFi
+	FPSCounterText.Text = "0"
+	FPSCounterText.TextColor3 = Color3.fromRGB(0, 255, 0)
+	FPSCounterText.TextScaled = true
+	FPSCounterText.TextSize = 24
+	FPSCounterText.TextWrapped = false
+	FPSCounterText.Visible = false
+	FPSCounterText.TextXAlignment = Enum.TextXAlignment.Left
+	FPSCounterText.TextYAlignment = Enum.TextYAlignment.Top
 
-local SettingsOpenPos = UDim2.new(1, -257, 0, 0)
-local SettingsClosedPos = UDim2.new(1, 0, 0, 0)
+	local SettingsOpenPos = UDim2.new(1, -257, 0, 0)
+	local SettingsClosedPos = UDim2.new(1, 0, 0, 0)
 
-SettingsBackground.Name = "Settings"
-SettingsBackground.Parent = ScreenGui
-SettingsBackground.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-SettingsBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SettingsBackground.Position = SettingsClosedPos
-SettingsBackground.Size = UDim2.new(0, 257, 1, 0)
-SettingsBackground.ZIndex = 90
+	SettingsBackground.Name = "Settings"
+	SettingsBackground.Parent = ScreenGui
+	SettingsBackground.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	SettingsBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SettingsBackground.Position = SettingsClosedPos
+	SettingsBackground.Size = UDim2.new(0, 257, 1, 0)
+	SettingsBackground.ZIndex = 90
 
-SettingsHeader.Name = "SettingsHeader"
-SettingsHeader.Parent = SettingsBackground
-SettingsHeader.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-SettingsHeader.BorderColor3 = Color3.fromRGB(36, 40, 46)
-SettingsHeader.BorderSizePixel = 0
-SettingsHeader.Position = UDim2.new(-0.000494122505, 0, 0, 0)
-SettingsHeader.Size = UDim2.new(1, 0, 0, 56)
-SettingsHeader.ZIndex = 91
+	SettingsHeader.Name = "SettingsHeader"
+	SettingsHeader.Parent = SettingsBackground
+	SettingsHeader.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	SettingsHeader.BorderColor3 = Color3.fromRGB(36, 40, 46)
+	SettingsHeader.BorderSizePixel = 0
+	SettingsHeader.Position = UDim2.new(-0.000494122505, 0, 0, 0)
+	SettingsHeader.Size = UDim2.new(1, 0, 0, 56)
+	SettingsHeader.ZIndex = 91
 
-SettingsTitle.Name = "SettingsTitle"
-SettingsTitle.Parent = SettingsHeader
-SettingsTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SettingsTitle.BackgroundTransparency = 1.000
-SettingsTitle.BorderSizePixel = 0
-SettingsTitle.Position = UDim2.new(0.0972017646, 0, 0.160714284, 0)
-SettingsTitle.Size = UDim2.new(0, 199, 0, 37)
-SettingsTitle.ZIndex = 92
-SettingsTitle.Font = Enum.Font.Arcade
-SettingsTitle.Text = "Settings"
-SettingsTitle.TextColor3 = Color3.fromRGB(240, 240, 240)
-SettingsTitle.TextSize = 40.000
-SettingsTitle.TextWrapped = true
+	SettingsTitle.Name = "SettingsTitle"
+	SettingsTitle.Parent = SettingsHeader
+	SettingsTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SettingsTitle.BackgroundTransparency = 1.000
+	SettingsTitle.BorderSizePixel = 0
+	SettingsTitle.Position = UDim2.new(0.0972017646, 0, 0.160714284, 0)
+	SettingsTitle.Size = UDim2.new(0, 199, 0, 37)
+	SettingsTitle.ZIndex = 92
+	SettingsTitle.Font = Enum.Font.Arcade
+	SettingsTitle.Text = "Settings"
+	SettingsTitle.TextColor3 = Color3.fromRGB(240, 240, 240)
+	SettingsTitle.TextSize = 40.000
+	SettingsTitle.TextWrapped = true
 
-UIListLayout3.Name = "UIListLayout3"
-UIListLayout3.Parent = SettingsBackground
-UIListLayout3.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout3.Padding = UDim.new(0, 15)
+	UIListLayout3.Name = "UIListLayout3"
+	UIListLayout3.Parent = SettingsBackground
+	UIListLayout3.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout3.Padding = UDim.new(0, 15)
 
-MemorySpoof.Name = "MemorySpoof"
-MemorySpoof.Parent = SettingsBackground
-MemorySpoof.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-MemorySpoof.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MemorySpoof.Position = UDim2.new(0, 0, 0.120748296, 0)
-MemorySpoof.Size = UDim2.new(1, 0, -0.092, 180)
-MemorySpoof.ZIndex = 93
+	MemorySpoof.Name = "MemorySpoof"
+	MemorySpoof.Parent = SettingsBackground
+	MemorySpoof.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	MemorySpoof.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MemorySpoof.Position = UDim2.new(0, 0, 0.120748296, 0)
+	MemorySpoof.Size = UDim2.new(1, 0, -0.092, 180)
+	MemorySpoof.ZIndex = 93
 
-MemSpoofTitle.Name = "MemSpoofTitle"
-MemSpoofTitle.Parent = MemorySpoof
-MemSpoofTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
-MemSpoofTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
-MemSpoofTitle.BorderSizePixel = 0
-MemSpoofTitle.Size = UDim2.new(1, 0, 0, 50)
-MemSpoofTitle.ZIndex = 94
-MemSpoofTitle.Font = Enum.Font.Oswald
-MemSpoofTitle.Text = "Memory Spoof:"
-MemSpoofTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-MemSpoofTitle.TextSize = 34.000
-MemSpoofTitle.TextWrapped = true
+	MemSpoofTitle.Name = "MemSpoofTitle"
+	MemSpoofTitle.Parent = MemorySpoof
+	MemSpoofTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
+	MemSpoofTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	MemSpoofTitle.BorderSizePixel = 0
+	MemSpoofTitle.Size = UDim2.new(1, 0, 0, 50)
+	MemSpoofTitle.ZIndex = 94
+	MemSpoofTitle.Font = Enum.Font.Oswald
+	MemSpoofTitle.Text = "Memory Spoof:"
+	MemSpoofTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MemSpoofTitle.TextSize = 34.000
+	MemSpoofTitle.TextWrapped = true
 
-MemoryToggleBackground.Name = "MemoryToggleBackground"
-MemoryToggleBackground.Parent = MemorySpoof
-MemoryToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-MemoryToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MemoryToggleBackground.Position = UDim2.new(0, 78, 0, 59)
-MemoryToggleBackground.Size = UDim2.new(0, 100, 0, 40)
-MemoryToggleBackground.ZIndex = 94
+	MemoryToggleBackground.Name = "MemoryToggleBackground"
+	MemoryToggleBackground.Parent = MemorySpoof
+	MemoryToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	MemoryToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MemoryToggleBackground.Position = UDim2.new(0, 78, 0, 59)
+	MemoryToggleBackground.Size = UDim2.new(0, 100, 0, 40)
+	MemoryToggleBackground.ZIndex = 94
 
-UICornerMemory.Name = "UICornerMemory"
-UICornerMemory.Parent = MemoryToggleBackground
+	UICornerMemory.Name = "UICornerMemory"
+	UICornerMemory.Parent = MemoryToggleBackground
 
-MemoryToggleButton.Name = "MemoryToggleButton"
-MemoryToggleButton.Parent = MemoryToggleBackground
-MemoryToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-MemoryToggleButton.Size = UDim2.new(0, 50, 1, 0)
-MemoryToggleButton.ZIndex = 95
-MemoryToggleButton.Font = Enum.Font.SourceSans
-MemoryToggleButton.Text = ""
-MemoryToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-MemoryToggleButton.TextSize = 14.000
+	MemoryToggleButton.Name = "MemoryToggleButton"
+	MemoryToggleButton.Parent = MemoryToggleBackground
+	MemoryToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	MemoryToggleButton.Size = UDim2.new(0, 50, 1, 0)
+	MemoryToggleButton.ZIndex = 95
+	MemoryToggleButton.Font = Enum.Font.SourceSans
+	MemoryToggleButton.Text = ""
+	MemoryToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	MemoryToggleButton.TextSize = 14.000
 
-UICornerMemory2.Name = "UICornerMemory2"
-UICornerMemory2.Parent = MemoryToggleButton
+	UICornerMemory2.Name = "UICornerMemory2"
+	UICornerMemory2.Parent = MemoryToggleButton
 
-ClientKickBypass.Name = "ClientKickBypass"
-ClientKickBypass.Parent = SettingsBackground
-ClientKickBypass.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-ClientKickBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ClientKickBypass.Position = UDim2.new(0, 0, 0.120748296, 0)
-ClientKickBypass.Size = UDim2.new(1, 0, -0.092, 180)
-ClientKickBypass.ZIndex = 93
+	ClientKickBypass.Name = "ClientKickBypass"
+	ClientKickBypass.Parent = SettingsBackground
+	ClientKickBypass.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	ClientKickBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ClientKickBypass.Position = UDim2.new(0, 0, 0.120748296, 0)
+	ClientKickBypass.Size = UDim2.new(1, 0, -0.092, 180)
+	ClientKickBypass.ZIndex = 93
 
-ClientKickBypassTitle.Name = "ClientKickBypassTitle"
-ClientKickBypassTitle.Parent = ClientKickBypass
-ClientKickBypassTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
-ClientKickBypassTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ClientKickBypassTitle.BorderSizePixel = 0
-ClientKickBypassTitle.Size = UDim2.new(1, 0, 0, 50)
-ClientKickBypassTitle.ZIndex = 94
-ClientKickBypassTitle.Font = Enum.Font.Oswald
-ClientKickBypassTitle.Text = "Client Side Kick Bypass:"
-ClientKickBypassTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-ClientKickBypassTitle.TextSize = 34.000
-ClientKickBypassTitle.TextWrapped = true
+	ClientKickBypassTitle.Name = "ClientKickBypassTitle"
+	ClientKickBypassTitle.Parent = ClientKickBypass
+	ClientKickBypassTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
+	ClientKickBypassTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	ClientKickBypassTitle.BorderSizePixel = 0
+	ClientKickBypassTitle.Size = UDim2.new(1, 0, 0, 50)
+	ClientKickBypassTitle.ZIndex = 94
+	ClientKickBypassTitle.Font = Enum.Font.Oswald
+	ClientKickBypassTitle.Text = "Client Side Kick Bypass:"
+	ClientKickBypassTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	ClientKickBypassTitle.TextSize = 34.000
+	ClientKickBypassTitle.TextWrapped = true
 
-KickToggleBackground.Name = "KickToggleBackground"
-KickToggleBackground.Parent = ClientKickBypass
-KickToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-KickToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-KickToggleBackground.Position = UDim2.new(0, 78, 0, 59)
-KickToggleBackground.Size = UDim2.new(0, 100, 0, 40)
-KickToggleBackground.ZIndex = 94
+	KickToggleBackground.Name = "KickToggleBackground"
+	KickToggleBackground.Parent = ClientKickBypass
+	KickToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	KickToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	KickToggleBackground.Position = UDim2.new(0, 78, 0, 59)
+	KickToggleBackground.Size = UDim2.new(0, 100, 0, 40)
+	KickToggleBackground.ZIndex = 94
 
-UICornerKick.Name = "UICornerKick"
-UICornerKick.Parent = KickToggleBackground
+	UICornerKick.Name = "UICornerKick"
+	UICornerKick.Parent = KickToggleBackground
 
-KickToggleButton.Name = "KickToggleButton"
-KickToggleButton.Parent = KickToggleBackground
-KickToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-KickToggleButton.Size = UDim2.new(0, 50, 1, 0)
-KickToggleButton.ZIndex = 95
-KickToggleButton.Font = Enum.Font.SourceSans
-KickToggleButton.Text = ""
-KickToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-KickToggleButton.TextSize = 14.000
+	KickToggleButton.Name = "KickToggleButton"
+	KickToggleButton.Parent = KickToggleBackground
+	KickToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	KickToggleButton.Size = UDim2.new(0, 50, 1, 0)
+	KickToggleButton.ZIndex = 95
+	KickToggleButton.Font = Enum.Font.SourceSans
+	KickToggleButton.Text = ""
+	KickToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	KickToggleButton.TextSize = 14.000
 
-UICornerKick2.Name = "UICornerKick2"
-UICornerKick2.Parent = KickToggleButton
+	UICornerKick2.Name = "UICornerKick2"
+	UICornerKick2.Parent = KickToggleButton
 
-FPSCounter.Name = "FPSCounter"
-FPSCounter.Parent = SettingsBackground
-FPSCounter.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-FPSCounter.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FPSCounter.Position = UDim2.new(-0.933852136, 0, 0.108843535, 0)
-FPSCounter.Size = UDim2.new(1, 0, -0.092, 180)
-FPSCounter.ZIndex = 93
+	FPSCounter.Name = "FPSCounter"
+	FPSCounter.Parent = SettingsBackground
+	FPSCounter.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	FPSCounter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	FPSCounter.Position = UDim2.new(-0.933852136, 0, 0.108843535, 0)
+	FPSCounter.Size = UDim2.new(1, 0, -0.092, 180)
+	FPSCounter.ZIndex = 93
 
-FPSCounterTitle.Name = "FPSCounterTitle"
-FPSCounterTitle.Parent = FPSCounter
-FPSCounterTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
-FPSCounterTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
-FPSCounterTitle.BorderSizePixel = 0
-FPSCounterTitle.Size = UDim2.new(1, 0, 0, 50)
-FPSCounterTitle.ZIndex = 94
-FPSCounterTitle.Font = Enum.Font.Oswald
-FPSCounterTitle.Text = "FPS Counter:"
-FPSCounterTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-FPSCounterTitle.TextSize = 34.000
-FPSCounterTitle.TextWrapped = true
+	FPSCounterTitle.Name = "FPSCounterTitle"
+	FPSCounterTitle.Parent = FPSCounter
+	FPSCounterTitle.BackgroundColor3 = Color3.fromRGB(45, 47, 53)
+	FPSCounterTitle.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	FPSCounterTitle.BorderSizePixel = 0
+	FPSCounterTitle.Size = UDim2.new(1, 0, 0, 50)
+	FPSCounterTitle.ZIndex = 94
+	FPSCounterTitle.Font = Enum.Font.Oswald
+	FPSCounterTitle.Text = "FPS Counter:"
+	FPSCounterTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+	FPSCounterTitle.TextSize = 34.000
+	FPSCounterTitle.TextWrapped = true
 
-FPSToggleBackground.Name = "FPSToggleBackground"
-FPSToggleBackground.Parent = FPSCounter
-FPSToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-FPSToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FPSToggleBackground.Position = UDim2.new(0, 78, 0, 59)
-FPSToggleBackground.Size = UDim2.new(0, 100, 0, 40)
-FPSToggleBackground.ZIndex = 94
+	FPSToggleBackground.Name = "FPSToggleBackground"
+	FPSToggleBackground.Parent = FPSCounter
+	FPSToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	FPSToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	FPSToggleBackground.Position = UDim2.new(0, 78, 0, 59)
+	FPSToggleBackground.Size = UDim2.new(0, 100, 0, 40)
+	FPSToggleBackground.ZIndex = 94
 
-UICornerFPS.Name = "UICornerFPS"
-UICornerFPS.Parent = FPSToggleBackground
+	UICornerFPS.Name = "UICornerFPS"
+	UICornerFPS.Parent = FPSToggleBackground
 
-FPSToggleButton.Name = "FPSToggleButton"
-FPSToggleButton.Parent = FPSToggleBackground
-FPSToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-FPSToggleButton.Size = UDim2.new(0, 50, 1, 0)
-FPSToggleButton.ZIndex = 95
-FPSToggleButton.Font = Enum.Font.SourceSans
-FPSToggleButton.Text = ""
-FPSToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-FPSToggleButton.TextSize = 14.000
+	FPSToggleButton.Name = "FPSToggleButton"
+	FPSToggleButton.Parent = FPSToggleBackground
+	FPSToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	FPSToggleButton.Size = UDim2.new(0, 50, 1, 0)
+	FPSToggleButton.ZIndex = 95
+	FPSToggleButton.Font = Enum.Font.SourceSans
+	FPSToggleButton.Text = ""
+	FPSToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	FPSToggleButton.TextSize = 14.000
 
-UICornerFPS2.Name = "UICornerFPS2"
-UICornerFPS2.Parent = FPSToggleButton
+	UICornerFPS2.Name = "UICornerFPS2"
+	UICornerFPS2.Parent = FPSToggleButton
 
---// Auto Expand Frame Size
+	--// Auto Expand Frame Size
 
-local FrameCheck = coroutine.create(function()
-	for i, v in pairs(CheatArea:GetChildren()) do
-		if v.Name ~= "GameTitle" then
-			CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 50)
+	local FrameCheck = coroutine.create(function()
+		for i, v in pairs(CheatArea:GetChildren()) do
+			if v.Name ~= "GameTitle" then
+				CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 50)
+			end
 		end
-	end
-	CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 1)
-end)
-
-local CoreGui = game.CoreGui
-
-ScreenGui.Name = "MultiPurposeGUI" -- Search Coregui for this
-ScreenGui.Parent = CoreGui -- Change to game.coregui in script
-
--- Main GUI
-
-main.Name = "main"
-main.Parent = ScreenGui
-main.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-main.BorderColor3 = Color3.fromRGB(0, 0, 0)
-main.Position = UDim2.new(0.545, -661, 0.514, -185)
-main.Size = UDim2.new(0, 679, 0, 367)
-main.Visible = false
-main.ZIndex = 90
-main.Active = true
-main.Draggable = true
-
-header.Name = "header"
-header.Parent = main
-header.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-header.BorderSizePixel = 0
-header.Size = UDim2.new(0, 679, 0, 56)
-header.ZIndex = 91
-
-title.Name = "title"
-title.Parent = header
-title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-title.BackgroundTransparency = 1.000
-title.BorderSizePixel = 0
-title.Position = UDim2.new(0.0972017646, 0, 0.160714284, 0)
-title.Size = UDim2.new(0, 199, 0, 37)
-title.ZIndex = 92
-title.Font = Enum.Font.Arcade
-title.Text = "SlySploit"
-title.TextColor3 = Color3.fromRGB(240, 240, 240)
-title.TextSize = 40.000
-title.TextWrapped = true
-title.TextXAlignment = Enum.TextXAlignment.Left
-
-version.Name = "version"
-version.Parent = header
-version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-version.BackgroundTransparency = 1.000
-version.BorderColor3 = Color3.fromRGB(27, 42, 53)
-version.BorderSizePixel = 0
-version.Position = UDim2.new(0.39027983, 0, 0.5, 0)
-version.Size = UDim2.new(0, 41, 0, 18)
-version.ZIndex = 92
-version.Font = Enum.Font.TitilliumWeb
-version.Text = "v 1.0.0"
-version.TextColor3 = Color3.fromRGB(168, 168, 168)
-version.TextScaled = true
-version.TextSize = 20.000
-version.TextWrapped = true
-version.TextXAlignment = Enum.TextXAlignment.Left
-
-mainlogo.Name = "mainlogo"
-mainlogo.Parent = header
-mainlogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-mainlogo.BackgroundTransparency = 1.000
-mainlogo.BorderSizePixel = 0
-mainlogo.Position = UDim2.new(0.0117820324, 0, 0.0535714328, 0)
-mainlogo.Size = UDim2.new(0, 50, 0, 50)
-mainlogo.ZIndex = 92
-mainlogo.Image = "http://www.roblox.com/asset/?id=6771709231"
-
-close.Name = "close"
-close.Parent = header
-close.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-close.BorderColor3 = Color3.fromRGB(0, 0, 0)
-close.BorderSizePixel = 0
-close.Position = UDim2.new(0.963, 0, -0.0179999992, 1)
-close.Size = UDim2.new(0, 25, 0, 25)
-close.ZIndex = 92
-close.Font = Enum.Font.SciFi
-close.Text = "X"
-close.TextColor3 = Color3.fromRGB(255, 255, 224)
-close.TextSize = 14.000
-close.TextWrapped = true
-
-minimize.Name = "minimize"
-minimize.Parent = header
-minimize.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-minimize.BorderColor3 = Color3.fromRGB(0, 0, 0)
-minimize.BorderSizePixel = 0
-minimize.Position = UDim2.new(0.924745262, 0, -0.0179999992, 1)
-minimize.Size = UDim2.new(0, 25, 0, 25)
-minimize.ZIndex = 92
-minimize.Font = Enum.Font.SciFi
-minimize.Text = "_"
-minimize.TextColor3 = Color3.fromRGB(255, 255, 224)
-minimize.TextSize = 14.000
-minimize.TextWrapped = true
-
-
--- Loading Screen
-
-
-loadingscreen.Name = "loadingscreen"
-loadingscreen.Parent = ScreenGui
-loadingscreen.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-loadingscreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
-loadingscreen.Position = UDim2.new(0.5, -84,0.5, -65)
-loadingscreen.Size = UDim2.new(0,168,0, 130)
-loadingscreen.ZIndex = 90
-
-loadingtitle.Name = "loadingtitle"
-loadingtitle.Parent = loadingscreen
-loadingtitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-loadingtitle.BackgroundTransparency = 1.000
-loadingtitle.BorderSizePixel = 0
-loadingtitle.Position = UDim2.new(0.214254841, 0, 0.830734372, 0)
-loadingtitle.Size = UDim2.new(0, 199, 0, 37)
-loadingtitle.ZIndex = 91
-loadingtitle.Font = Enum.Font.Arcade
-loadingtitle.Text = "SlySploit"
-loadingtitle.TextColor3 = Color3.fromRGB(240, 240, 240)
-loadingtitle.TextSize = 40.000
-loadingtitle.TextWrapped = true
-loadingtitle.TextXAlignment = Enum.TextXAlignment.Left
-
-loadingversion.Name = "loadingversion"
-loadingversion.Parent = loadingtitle
-loadingversion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-loadingversion.BackgroundTransparency = 1.000
-loadingversion.BorderColor3 = Color3.fromRGB(27, 42, 53)
-loadingversion.BorderSizePixel = 0
-loadingversion.Position = UDim2.new(0.995261788, 0, 0.5108217, 0)
-loadingversion.Size = UDim2.new(0, 41, 0, 18)
-loadingversion.ZIndex = 91
-loadingversion.Font = Enum.Font.TitilliumWeb
-loadingversion.Text = "v 1.0.0"
-loadingversion.TextColor3 = Color3.fromRGB(168, 168, 168)
-loadingversion.TextScaled = true
-loadingversion.TextSize = 20.000
-loadingversion.TextWrapped = true
-loadingversion.TextXAlignment = Enum.TextXAlignment.Left
-
-loadinglogo.Name = "loadinglogo"
-loadinglogo.Parent = loadingscreen
-loadinglogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-loadinglogo.BackgroundTransparency = 1.000
-loadinglogo.BorderSizePixel = 0
-loadinglogo.Position = UDim2.new(0.379318088, 0, 0.0173541252, 0)
-loadinglogo.Size = UDim2.new(0, 100, 0, 100)
-loadinglogo.ZIndex = 92
-loadinglogo.Image = "http://www.roblox.com/asset/?id=6771709231"
-
-loadingbarBG.Name = "loadingbarBG"
-loadingbarBG.Parent = loadingscreen
-loadingbarBG.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
-loadingbarBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
-loadingbarBG.Position = UDim2.new(0.214254901, 0, 0.730382323, 0)
-loadingbarBG.Size = UDim2.new(0, 239, 0, 11)
-loadingbarBG.ZIndex = 91
-
-UICorner.Parent = loadingbarBG
-
-loadingbarprogress.Name = "loadingbarprogress"
-loadingbarprogress.Parent = loadingbarBG
-loadingbarprogress.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
-loadingbarprogress.BorderColor3 = Color3.fromRGB(0, 0, 0)
-loadingbarprogress.Position = UDim2.new(-0.00331837172, 0, -0.0878018439, 0)
-loadingbarprogress.Size = UDim2.new(0, 1, 0, 11)
-loadingbarprogress.ZIndex = 92
-
-UICorner_2.Parent = loadingbarprogress
-
-loadingwatermark.Name = "loadingwatermark"
-loadingwatermark.Parent = loadingscreen
-loadingwatermark.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-loadingwatermark.BackgroundTransparency = 1.000
-loadingwatermark.BorderSizePixel = 0
-loadingwatermark.Position = UDim2.new(0.209523812, 0, 0.688128769, 0)
-loadingwatermark.Size = UDim2.new(0, 241, 0, 50)
-loadingwatermark.ZIndex = 92
-loadingwatermark.Font = Enum.Font.TitilliumWeb
-loadingwatermark.Text = "Made by: CrumCusader"
-loadingwatermark.TextColor3 = Color3.fromRGB(240, 240, 240)
-loadingwatermark.TextSize = 20.000
-loadingwatermark.TextTransparency = 1.000
-loadingwatermark.TextWrapped = true
-
-
--- Re-Open Arrow
-
-
-minimizedarrow.Name = "minimizedarrow"
-minimizedarrow.Parent = ScreenGui
-minimizedarrow.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
-minimizedarrow.Position = UDim2.new(-0.0146871004, 0, 0.45644173, 0)
-minimizedarrow.Size = UDim2.new(0, 43, 0, 70)
-minimizedarrow.Visible = false
-minimizedarrow.ZIndex = 90
-
-UICorner_3.Parent = minimizedarrow
-
-arrow.Name = "arrow"
-arrow.Parent = minimizedarrow
-arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-arrow.BackgroundTransparency = 1.000
-arrow.Position = UDim2.new(-0.0149999997, 0, -0.00114285946, 0)
-arrow.Size = UDim2.new(0, 43, 0, 70)
-arrow.ZIndex = 91
-arrow.Font = Enum.Font.TitilliumWeb
-arrow.Text = "▶"
-arrow.TextColor3 = Color3.fromRGB(240, 240, 240)
-arrow.TextScaled = true
-arrow.TextSize = 14.000
-arrow.TextWrapped = true
-arrow.TextXAlignment = Enum.TextXAlignment.Right
-
-UICorner_4.Parent = arrow
-
-Notice.Name = "Notice"
-Notice.Size = UDim2.new(0, 390, 0, 61)
-Notice.Position = UDim2.new(0.5, -195, 0, 0)
-Notice.ZIndex = 90
-Notice.BackgroundTransparency = 0.3
-Notice.BackgroundColor3 = Color3.new(0.14902, 0.14902, 0.14902)
-Notice.TextColor3 = Color3.new(1, 0, 0)
-Notice.TextStrokeColor3 = Color3.new(0, 0, 0)
-Notice.TextStrokeTransparency = 0
-Notice.Font = Enum.Font.Oswald
-Notice.TextScaled = true
-Notice.Parent = ScreenGui
-Notice.Visible = false
-
--- GUI CONTROLLER SCRIPT
-
-local MainOpen = false
-local LoadingOpen = false
-local ArrowOpen = false
-
--- Minimize Main GUI
-
-
-minimize.MouseButton1Click:Connect(function()
-	-- Tween smaller, then tween position to arrow. Make arrow visible and then Main invisible
-
-	main.Visible = false
-	minimizedarrow.Visible = true
-end)
-
-
--- Minimize Main GUI
-
-
-arrow.MouseButton1Click:Connect(function()
-	-- Make Main visible and arrow invisible. Tween main position to original location, tween it to be wider, then tween it in a dropdown fashion after
-
-	minimizedarrow.Visible = false
-	main.Visible = true
-end)
-
-
--- Close / Destroy / Unhook Script
-
-
-close.MouseButton1Click:Connect(function()
-	-- Tween out then destroy
-
-	close.Parent.Parent.Parent:Destroy() -- Entire GUI
-end)
-
-
--- Auto Loading
-
-loadingscreen.Transparency = 1
-loadingbarBG.Transparency = 1
-loadingbarprogress.Transparency = 1
-loadinglogo.ImageTransparency = 1
-loadingtitle.TextTransparency = 1
-loadingversion.TextTransparency = 1
-loadingwatermark.TextTransparency = 1
-
-if WrongGame == false and Duplicate == false then
-	StarterGui:SetCore("SendNotification", {
-		Title = "Injecting...";
-		Text = "The script is being injected";
-		Duration = 3;
-	})
-end
-
-task.wait(1)
-
--- Tweens
-
-if WrongGame == false and Duplicate == false then
-	local TS = game:GetService("TweenService")
-	local Lighting = game:GetService("Lighting")
-	local Blur = Instance.new("BlurEffect")
-	Blur.Parent = Lighting
-	Blur.Size = 0
-
-	TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 20}):Play() -- Blur tweens in with loading screen
-	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
-
-	task.wait(1) -- Delay Before GUI size and position Tween begins
-
-	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5 , -210 , 0.5 , -248), Size = UDim2.new(0, 420, 0, 497)}):Play()
-
-	task.wait(0.5)
-
-	TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
-	TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
-	TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 0}):Play()
-	TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-	TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-
-	task.wait(1)
-
-	TS:Create(loadingbarprogress, TweenInfo.new(2.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0, 239,0, 11)}):Play()
-
-	task.wait(2.5)
-
-	TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-	TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-
-	task.wait(1)
-
-	TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
-
-	task.wait(2)
-
-	-- Tween Everything out and then main in
-
-	TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
-	TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-	TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-	TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
-
-	task.wait(1)
-
-	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5, -84,0.5, -65), Size = UDim2.new(0,168,0, 130)}):Play()
-	TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 0}):Play()
-
-	task.wait(1)
-
-	TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
-
-	task.wait(1)
-
-	local SettingsReveal = coroutine.create(function()
-		SettingsButton.Visible = true
-
-		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
-
-		task.wait(2)
-
-		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
+		CheatArea.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y - 1)
 	end)
 
-	coroutine.resume(SettingsReveal)
+	local CoreGui = game.CoreGui
 
-	local bindable = Instance.new("BindableFunction")
+	ScreenGui.Name = "MultiPurposeGUI" -- Search Coregui for this
+	ScreenGui.Parent = CoreGui -- Change to game.coregui in script
 
-	function bindable.OnInvoke()
+	-- Main GUI
 
-		task.wait(1)
+	main.Name = "main"
+	main.Parent = ScreenGui
+	main.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	main.Position = UDim2.new(0.545, -661, 0.514, -185)
+	main.Size = UDim2.new(0, 679, 0, 367)
+	main.Visible = false
+	main.ZIndex = 90
+	main.Active = true
+	main.Draggable = true
 
+	header.Name = "header"
+	header.Parent = main
+	header.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	header.BorderSizePixel = 0
+	header.Size = UDim2.new(0, 679, 0, 56)
+	header.ZIndex = 91
+
+	title.Name = "title"
+	title.Parent = header
+	title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	title.BackgroundTransparency = 1.000
+	title.BorderSizePixel = 0
+	title.Position = UDim2.new(0.0972017646, 0, 0.160714284, 0)
+	title.Size = UDim2.new(0, 199, 0, 37)
+	title.ZIndex = 92
+	title.Font = Enum.Font.Arcade
+	title.Text = "SlySploit"
+	title.TextColor3 = Color3.fromRGB(240, 240, 240)
+	title.TextSize = 40.000
+	title.TextWrapped = true
+	title.TextXAlignment = Enum.TextXAlignment.Left
+
+	version.Name = "version"
+	version.Parent = header
+	version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	version.BackgroundTransparency = 1.000
+	version.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	version.BorderSizePixel = 0
+	version.Position = UDim2.new(0.39027983, 0, 0.5, 0)
+	version.Size = UDim2.new(0, 41, 0, 18)
+	version.ZIndex = 92
+	version.Font = Enum.Font.TitilliumWeb
+	version.Text = "v 1.0.0"
+	version.TextColor3 = Color3.fromRGB(168, 168, 168)
+	version.TextScaled = true
+	version.TextSize = 20.000
+	version.TextWrapped = true
+	version.TextXAlignment = Enum.TextXAlignment.Left
+
+	mainlogo.Name = "mainlogo"
+	mainlogo.Parent = header
+	mainlogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	mainlogo.BackgroundTransparency = 1.000
+	mainlogo.BorderSizePixel = 0
+	mainlogo.Position = UDim2.new(0.0117820324, 0, 0.0535714328, 0)
+	mainlogo.Size = UDim2.new(0, 50, 0, 50)
+	mainlogo.ZIndex = 92
+	mainlogo.Image = "http://www.roblox.com/asset/?id=6771709231"
+
+	close.Name = "close"
+	close.Parent = header
+	close.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	close.BorderSizePixel = 0
+	close.Position = UDim2.new(0.963, 0, -0.0179999992, 1)
+	close.Size = UDim2.new(0, 25, 0, 25)
+	close.ZIndex = 92
+	close.Font = Enum.Font.SciFi
+	close.Text = "X"
+	close.TextColor3 = Color3.fromRGB(255, 255, 224)
+	close.TextSize = 14.000
+	close.TextWrapped = true
+
+	minimize.Name = "minimize"
+	minimize.Parent = header
+	minimize.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	minimize.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	minimize.BorderSizePixel = 0
+	minimize.Position = UDim2.new(0.924745262, 0, -0.0179999992, 1)
+	minimize.Size = UDim2.new(0, 25, 0, 25)
+	minimize.ZIndex = 92
+	minimize.Font = Enum.Font.SciFi
+	minimize.Text = "_"
+	minimize.TextColor3 = Color3.fromRGB(255, 255, 224)
+	minimize.TextSize = 14.000
+	minimize.TextWrapped = true
+
+
+	-- Loading Screen
+
+
+	loadingscreen.Name = "loadingscreen"
+	loadingscreen.Parent = ScreenGui
+	loadingscreen.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	loadingscreen.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingscreen.Position = UDim2.new(0.5, -84,0.5, -65)
+	loadingscreen.Size = UDim2.new(0,168,0, 130)
+	loadingscreen.ZIndex = 90
+
+	loadingtitle.Name = "loadingtitle"
+	loadingtitle.Parent = loadingscreen
+	loadingtitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingtitle.BackgroundTransparency = 1.000
+	loadingtitle.BorderSizePixel = 0
+	loadingtitle.Position = UDim2.new(0.214254841, 0, 0.830734372, 0)
+	loadingtitle.Size = UDim2.new(0, 199, 0, 37)
+	loadingtitle.ZIndex = 91
+	loadingtitle.Font = Enum.Font.Arcade
+	loadingtitle.Text = "SlySploit"
+	loadingtitle.TextColor3 = Color3.fromRGB(240, 240, 240)
+	loadingtitle.TextSize = 40.000
+	loadingtitle.TextWrapped = true
+	loadingtitle.TextXAlignment = Enum.TextXAlignment.Left
+
+	loadingversion.Name = "loadingversion"
+	loadingversion.Parent = loadingtitle
+	loadingversion.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingversion.BackgroundTransparency = 1.000
+	loadingversion.BorderColor3 = Color3.fromRGB(27, 42, 53)
+	loadingversion.BorderSizePixel = 0
+	loadingversion.Position = UDim2.new(0.995261788, 0, 0.5108217, 0)
+	loadingversion.Size = UDim2.new(0, 41, 0, 18)
+	loadingversion.ZIndex = 91
+	loadingversion.Font = Enum.Font.TitilliumWeb
+	loadingversion.Text = "v 1.0.0"
+	loadingversion.TextColor3 = Color3.fromRGB(168, 168, 168)
+	loadingversion.TextScaled = true
+	loadingversion.TextSize = 20.000
+	loadingversion.TextWrapped = true
+	loadingversion.TextXAlignment = Enum.TextXAlignment.Left
+
+	loadinglogo.Name = "loadinglogo"
+	loadinglogo.Parent = loadingscreen
+	loadinglogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadinglogo.BackgroundTransparency = 1.000
+	loadinglogo.BorderSizePixel = 0
+	loadinglogo.Position = UDim2.new(0.379318088, 0, 0.0173541252, 0)
+	loadinglogo.Size = UDim2.new(0, 100, 0, 100)
+	loadinglogo.ZIndex = 92
+	loadinglogo.Image = "http://www.roblox.com/asset/?id=6771709231"
+
+	loadingbarBG.Name = "loadingbarBG"
+	loadingbarBG.Parent = loadingscreen
+	loadingbarBG.BackgroundColor3 = Color3.fromRGB(36, 40, 46)
+	loadingbarBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingbarBG.Position = UDim2.new(0.214254901, 0, 0.730382323, 0)
+	loadingbarBG.Size = UDim2.new(0, 239, 0, 11)
+	loadingbarBG.ZIndex = 91
+
+	UICorner.Parent = loadingbarBG
+
+	loadingbarprogress.Name = "loadingbarprogress"
+	loadingbarprogress.Parent = loadingbarBG
+	loadingbarprogress.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+	loadingbarprogress.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	loadingbarprogress.Position = UDim2.new(-0.00331837172, 0, -0.0878018439, 0)
+	loadingbarprogress.Size = UDim2.new(0, 1, 0, 11)
+	loadingbarprogress.ZIndex = 92
+
+	UICorner_2.Parent = loadingbarprogress
+
+	loadingwatermark.Name = "loadingwatermark"
+	loadingwatermark.Parent = loadingscreen
+	loadingwatermark.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	loadingwatermark.BackgroundTransparency = 1.000
+	loadingwatermark.BorderSizePixel = 0
+	loadingwatermark.Position = UDim2.new(0.209523812, 0, 0.688128769, 0)
+	loadingwatermark.Size = UDim2.new(0, 241, 0, 50)
+	loadingwatermark.ZIndex = 92
+	loadingwatermark.Font = Enum.Font.TitilliumWeb
+	loadingwatermark.Text = "Made by: CrumCusader"
+	loadingwatermark.TextColor3 = Color3.fromRGB(240, 240, 240)
+	loadingwatermark.TextSize = 20.000
+	loadingwatermark.TextTransparency = 1.000
+	loadingwatermark.TextWrapped = true
+
+
+	-- Re-Open Arrow
+
+
+	minimizedarrow.Name = "minimizedarrow"
+	minimizedarrow.Parent = ScreenGui
+	minimizedarrow.BackgroundColor3 = Color3.fromRGB(51, 54, 60)
+	minimizedarrow.Position = UDim2.new(-0.0146871004, 0, 0.45644173, 0)
+	minimizedarrow.Size = UDim2.new(0, 43, 0, 70)
+	minimizedarrow.Visible = false
+	minimizedarrow.ZIndex = 90
+
+	UICorner_3.Parent = minimizedarrow
+
+	arrow.Name = "arrow"
+	arrow.Parent = minimizedarrow
+	arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	arrow.BackgroundTransparency = 1.000
+	arrow.Position = UDim2.new(-0.0149999997, 0, -0.00114285946, 0)
+	arrow.Size = UDim2.new(0, 43, 0, 70)
+	arrow.ZIndex = 91
+	arrow.Font = Enum.Font.TitilliumWeb
+	arrow.Text = "▶"
+	arrow.TextColor3 = Color3.fromRGB(240, 240, 240)
+	arrow.TextScaled = true
+	arrow.TextSize = 14.000
+	arrow.TextWrapped = true
+	arrow.TextXAlignment = Enum.TextXAlignment.Right
+
+	UICorner_4.Parent = arrow
+
+	Notice.Name = "Notice"
+	Notice.Size = UDim2.new(0, 390, 0, 61)
+	Notice.Position = UDim2.new(0.5, -195, 0, 0)
+	Notice.ZIndex = 90
+	Notice.BackgroundTransparency = 0.3
+	Notice.BackgroundColor3 = Color3.new(0.14902, 0.14902, 0.14902)
+	Notice.TextColor3 = Color3.new(1, 0, 0)
+	Notice.TextStrokeColor3 = Color3.new(0, 0, 0)
+	Notice.TextStrokeTransparency = 0
+	Notice.Font = Enum.Font.Oswald
+	Notice.TextScaled = true
+	Notice.Parent = ScreenGui
+	Notice.Visible = false
+
+	-- GUI CONTROLLER SCRIPT
+
+	local MainOpen = false
+	local LoadingOpen = false
+	local ArrowOpen = false
+
+	-- Minimize Main GUI
+
+
+	minimize.MouseButton1Click:Connect(function()
+		-- Tween smaller, then tween position to arrow. Make arrow visible and then Main invisible
+
+		main.Visible = false
+		minimizedarrow.Visible = true
+	end)
+
+
+	-- Minimize Main GUI
+
+
+	arrow.MouseButton1Click:Connect(function()
+		-- Make Main visible and arrow invisible. Tween main position to original location, tween it to be wider, then tween it in a dropdown fashion after
+
+		minimizedarrow.Visible = false
+		main.Visible = true
+	end)
+
+
+	-- Close / Destroy / Unhook Script
+
+
+	close.MouseButton1Click:Connect(function()
+		-- Tween out then destroy
+
+		close.Parent.Parent.Parent:Destroy() -- Entire GUI
+	end)
+
+
+	-- Auto Loading
+
+	loadingscreen.Transparency = 1
+	loadingbarBG.Transparency = 1
+	loadingbarprogress.Transparency = 1
+	loadinglogo.ImageTransparency = 1
+	loadingtitle.TextTransparency = 1
+	loadingversion.TextTransparency = 1
+	loadingwatermark.TextTransparency = 1
+
+	if WrongGame == false and Duplicate == false then
 		StarterGui:SetCore("SendNotification", {
-			Title = "Credits:";
-			Text = "Made by: CrumCusader";
-			Button1 = "Ok!";
-			Duration = 600;
+			Title = "Injecting...";
+			Text = "The script is being injected";
+			Duration = 3;
 		})
 	end
 
-	StarterGui:SetCore("SendNotification", {
-		Title = "Success!";
-		Text = "The script has been injected";
-		Callback = bindable,
-		Button1 = "Thanks";
-		Duration = 600;
-	})
+	task.wait(1)
 
-	loadingscreen.Transparency = 1 -- Tween Out again
-	loadingscreen.Visible = false
-	main.Visible = true
+	-- Tweens
 
-	Blur:Destroy()
-end
+	if WrongGame == false and Duplicate == false then
+		local TS = game:GetService("TweenService")
+		local Lighting = game:GetService("Lighting")
+		local Blur = Instance.new("BlurEffect")
+		Blur.Parent = Lighting
+		Blur.Size = 0
 
+		TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 20}):Play() -- Blur tweens in with loading screen
+		TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
 
---// All Script Requirements
+		task.wait(1) -- Delay Before GUI size and position Tween begins
 
-local Player = Players.LocalPlayer
-repeat task.wait() until Player.Character
-local Character = Player.Character
-repeat task.wait() until Character.Humanoid
-local Humanoid = Character.Humanoid
-repeat task.wait() until Character.HumanoidRootPart
-local HRP = Character.HumanoidRootPart
+		TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5 , -210 , 0.5 , -248), Size = UDim2.new(0, 420, 0, 497)}):Play()
 
-local TS = game:GetService("TweenService")
-local Lighting = game:GetService("Lighting")
+		task.wait(0.5)
 
---// Slot Formats
+		TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
+		TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 0}):Play()
+		TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 0}):Play()
+		TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
+		TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
 
--- Foundation
+		task.wait(1)
 
-local SlotFormat = Instance.new("Frame")
+		TS:Create(loadingbarprogress, TweenInfo.new(2.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0), {Size = UDim2.new(0, 239,0, 11)}):Play()
 
-SlotFormat.Parent = nil
-SlotFormat.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-SlotFormat.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SlotFormat.BorderSizePixel = 0
-SlotFormat.Position = UDim2.new(0, 0, -6.35782911e-08, 0)
-SlotFormat.Size = UDim2.new(1, 0, 0, 44)
-SlotFormat.ZIndex = 92
+		task.wait(2.5)
 
-local SlotDescription = Instance.new("TextLabel")
+		TS:Create(loadingbarBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
+		TS:Create(loadingbarprogress, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
 
-SlotDescription.Name = "Description"
-SlotDescription.Parent = SlotFormat
-SlotDescription.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SlotDescription.BackgroundTransparency = 1.000
-SlotDescription.BorderSizePixel = 0
-SlotDescription.Position = UDim2.new(0, 0, -0.00189495087, 0)
-SlotDescription.Size = UDim2.new(0.244588748, 0, 1, 0)
-SlotDescription.ZIndex = 92
-SlotDescription.Font = Enum.Font.Oswald
-SlotDescription.Text = "Description:"
-SlotDescription.TextColor3 = Color3.fromRGB(255, 255, 255)
-SlotDescription.TextSize = 22.000
-SlotDescription.TextWrapped = true
+		task.wait(1)
 
--- Toggle Mode
+		TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 0}):Play()
 
-local SlotToggleBackground = Instance.new("Frame")
+		task.wait(2)
 
-SlotToggleBackground.Parent = nil
-SlotToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-SlotToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SlotToggleBackground.Position = UDim2.new(0.770562768, 0, 0.204545468, 0)
-SlotToggleBackground.Size = UDim2.new(0, 74, 0, 25)
-SlotToggleBackground.ZIndex = 92
+		-- Tween Everything out and then main in
 
-local SlotToggleCorner = Instance.new("UICorner")
+		TS:Create(loadinglogo, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {ImageTransparency = 1}):Play()
+		TS:Create(loadingtitle, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
+		TS:Create(loadingversion, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
+		TS:Create(loadingwatermark, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {TextTransparency = 1}):Play()
 
-SlotToggleCorner.Parent = SlotToggleBackground
+		task.wait(1)
 
-local SlotToggleButton = Instance.new("TextButton")
+		TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Position = UDim2.new(0.5, -84,0.5, -65), Size = UDim2.new(0,168,0, 130)}):Play()
+		TS:Create(Blur, TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), {Size = 0}):Play()
 
-SlotToggleButton.Name = "SlotToggleButton"
-SlotToggleButton.Parent = SlotToggleBackground
-SlotToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-SlotToggleButton.BorderSizePixel = 0
-SlotToggleButton.Position = UDim2.new(0, 0, 0.119999997, 0)
-SlotToggleButton.Size = UDim2.new(0, 37, 0, 20)
-SlotToggleButton.ZIndex = 93
-SlotToggleButton.Font = Enum.Font.SourceSans
-SlotToggleButton.Text = ""
-SlotToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-SlotToggleButton.TextSize = 14.000
+		task.wait(1)
 
-local SlotToggleButtonCorner = Instance.new("UICorner")
+		TS:Create(loadingscreen, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {Transparency = 1}):Play()
 
-SlotToggleButtonCorner.Parent = SlotToggleButton
+		task.wait(1)
 
--- Data Entry Format
+		local SettingsReveal = coroutine.create(function()
+			SettingsButton.Visible = true
 
-local Entrybox = Instance.new("TextBox")
+			TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
 
-Entrybox.Name = "Entrybox"
-Entrybox.Parent = nil
-Entrybox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Entrybox.Position = UDim2.new(0.770562768, 0, 0.204545453, 0)
-Entrybox.Size = UDim2.new(0, 74, 0, 25)
-Entrybox.ZIndex = 7
-Entrybox.Font = Enum.Font.SourceSans
-Entrybox.Text = ""
-Entrybox.TextColor3 = Color3.fromRGB(255, 255, 255)
-Entrybox.TextSize = 14.000
-Entrybox.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
-Entrybox.BorderColor3 = Color3.new(0, 0, 0)
+			task.wait(2)
 
---// A Bizarre Day
-		
-GameTitle.Text = "A BIZARRE DAY GUI"
-
--- A Bizarre Day Script Requirements
-
-local ItemESPEnabled = false
-local PlayerESPEnabled = false
-local NotifierEnabled = false
-local AntiTSEnabled = false
-local AdminNotifEnabled = false
-
--- Item ESP
-
-local ItemESPBackground = SlotFormat:Clone()
-ItemESPBackground.Parent = CheatArea
-
-ItemESPBackground.Description.Text = "Item ESP:"
-
-local ItemESPToggleMode = SlotToggleBackground:Clone()
-ItemESPToggleMode.Parent = ItemESPBackground
-
-ItemESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
-
-	if not ItemESPEnabled then
-		ItemESPEnabled = true
-
-		TS:Create(ItemESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
-
-		delay(0.5, function()
-			local Updater = Instance.new("Part") -- Updates the ESP
-			Updater.Parent = game:GetService("Workspace").ItFolder
-			Updater:Destroy()
+			TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
 		end)
-	else
-		ItemESPEnabled = false
 
-		TS:Create(ItemESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+		coroutine.resume(SettingsReveal)
 
-		for i, v in pairs(game:GetService("Workspace").ItFolder:GetChildren()) do
-			if v:FindFirstChild("Handle") then
-				if v.Handle:FindFirstChild("BillboardGui") then
-					v.Handle.BillboardGui:Destroy()
-				end
-			end
+		local bindable = Instance.new("BindableFunction")
+
+		function bindable.OnInvoke()
+
+			task.wait(1)
+
+			StarterGui:SetCore("SendNotification", {
+				Title = "Credits:";
+				Text = "Made by: CrumCusader";
+				Button1 = "Ok!";
+				Duration = 600;
+			})
 		end
+
+		StarterGui:SetCore("SendNotification", {
+			Title = "Success!";
+			Text = "The script has been injected";
+			Callback = bindable,
+			Button1 = "Thanks";
+			Duration = 600;
+		})
+
+		loadingscreen.Transparency = 1 -- Tween Out again
+		loadingscreen.Visible = false
+		main.Visible = true
+
+		Blur:Destroy()
 	end
 
-	game:GetService("Workspace").ItFolder.ChildAdded:Connect(function()
 
-		if ItemESPEnabled then
+	--// All Script Requirements
 
-			for i, v in pairs(game:GetService("Workspace").ItFolder:GetChildren()) do -- Get all spawned items
-				if v.Name == "Arrow" and not v.Handle:FindFirstChild("BillboardGui") then
+	local Player = Players.LocalPlayer
+	repeat task.wait() until Player.Character
+	local Character = Player.Character
+	repeat task.wait() until Character.Humanoid
+	local Humanoid = Character.Humanoid
+	repeat task.wait() until Character.HumanoidRootPart
+	local HRP = Character.HumanoidRootPart
 
-					if not ItemESPEnabled then return end
+	local TS = game:GetService("TweenService")
+	local Lighting = game:GetService("Lighting")
 
-					local ArrowESP = Instance.new("BillboardGui")
-					ArrowESP.AlwaysOnTop = true
-					ArrowESP.MaxDistance = math.huge
-					ArrowESP.Enabled = true
-					ArrowESP.Size = UDim2.new(2,0,2,0)
-					ArrowESP.Active = true
-					ArrowESP.Parent = v.Handle
+	--// Slot Formats
 
-					local ArrowESPFrame = Instance.new("Frame")
-					ArrowESPFrame.BackgroundColor3 = Color3.new(1, 1, 0)
-					ArrowESPFrame.Visible = true
-					ArrowESPFrame.Size = UDim2.new(1,0,1,0)
-					ArrowESPFrame.ZIndex = 1
-					ArrowESPFrame.BackgroundTransparency = 0.5
-					ArrowESPFrame.Parent = ArrowESP
+	-- Foundation
 
-					local ArrowESPText = Instance.new("TextLabel")
-					ArrowESPText.Text = "Arrow"
-					ArrowESPText.TextColor = BrickColor.new("White")
-					ArrowESPText.Size = UDim2.new(1,0,1,0)
-					ArrowESPText.BackgroundTransparency = 1
-					ArrowESPText.Visible = true
-					ArrowESPText.ZIndex = 2
-					ArrowESPText.Parent = ArrowESPFrame
+	local SlotFormat = Instance.new("Frame")
 
-				elseif v.Name == "Requiem Arrow" and not v.Handle:FindFirstChild("BillboardGui") then
+	SlotFormat.Parent = nil
+	SlotFormat.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	SlotFormat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SlotFormat.BorderSizePixel = 0
+	SlotFormat.Position = UDim2.new(0, 0, -6.35782911e-08, 0)
+	SlotFormat.Size = UDim2.new(1, 0, 0, 44)
+	SlotFormat.ZIndex = 92
 
-					if not ItemESPEnabled then return end
+	local SlotDescription = Instance.new("TextLabel")
 
-					local ReqArrowESP = Instance.new("BillboardGui")
-					ReqArrowESP.AlwaysOnTop = true
-					ReqArrowESP.MaxDistance = math.huge
-					ReqArrowESP.Enabled = true
-					ReqArrowESP.Size = UDim2.new(6,0,6,0)
-					ReqArrowESP.Active = true
-					ReqArrowESP.Parent = v.Handle
+	SlotDescription.Name = "Description"
+	SlotDescription.Parent = SlotFormat
+	SlotDescription.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	SlotDescription.BackgroundTransparency = 1.000
+	SlotDescription.BorderSizePixel = 0
+	SlotDescription.Position = UDim2.new(0, 0, -0.00189495087, 0)
+	SlotDescription.Size = UDim2.new(0.244588748, 0, 1, 0)
+	SlotDescription.ZIndex = 92
+	SlotDescription.Font = Enum.Font.Oswald
+	SlotDescription.Text = "Description:"
+	SlotDescription.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SlotDescription.TextSize = 22.000
+	SlotDescription.TextWrapped = true
 
-					local ReqArrowESPImage = Instance.new("ImageLabel")
-					ReqArrowESPImage.Image = "http://www.roblox.com/asset/?id=2618549781"
-					ReqArrowESPImage.Visible = true
-					ReqArrowESPImage.Size = UDim2.new(1,0,1,0)
-					ReqArrowESPImage.BackgroundTransparency = 1
-					ReqArrowESPImage.Parent = ReqArrowESP
+	-- Toggle Mode
 
-					local ReqArrowESPText = Instance.new("TextLabel")
-					ReqArrowESPText.Text = "Requiem Arrow"
-					ReqArrowESPText.TextColor3 = Color3.new(1, 1, 0)
-					ReqArrowESPText.TextStrokeTransparency = 0
-					ReqArrowESPText.Visible = true
-					ReqArrowESPText.Size = UDim2.new(1,0,1,0)
-					ReqArrowESPText.BackgroundTransparency = 1
-					ReqArrowESPText.ZIndex = 2
-					ReqArrowESPText.Parent = ReqArrowESPImage
+	local SlotToggleBackground = Instance.new("Frame")
 
-				elseif v.Name == "Rokakaka Fruit" and not v.Handle:FindFirstChild("BillboardGui") then
+	SlotToggleBackground.Parent = nil
+	SlotToggleBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	SlotToggleBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SlotToggleBackground.Position = UDim2.new(0.770562768, 0, 0.204545468, 0)
+	SlotToggleBackground.Size = UDim2.new(0, 74, 0, 25)
+	SlotToggleBackground.ZIndex = 92
 
-					if not ItemESPEnabled then return end
+	local SlotToggleCorner = Instance.new("UICorner")
 
-					local RokaESP = Instance.new("BillboardGui")
-					RokaESP.AlwaysOnTop = true
-					RokaESP.MaxDistance = math.huge
-					RokaESP.Enabled = true
-					RokaESP.Size = UDim2.new(2,0,2,0)
-					RokaESP.Active = true
-					RokaESP.Parent = v.Handle
+	SlotToggleCorner.Parent = SlotToggleBackground
 
-					local RokaESPFrame = Instance.new("Frame")
-					RokaESPFrame.BackgroundColor3 = Color3.new(1, 0, 0)
-					RokaESPFrame.Visible = true
-					RokaESPFrame.ZIndex = 1
-					RokaESPFrame.Size = UDim2.new(1,0,1,0)
-					RokaESPFrame.BackgroundTransparency = 0.5
-					RokaESPFrame.Parent = RokaESP
+	local SlotToggleButton = Instance.new("TextButton")
 
-					local RokaESPText = Instance.new("TextLabel")
-					RokaESPText.Text = "Roka"
-					RokaESPText.TextColor = BrickColor.new("White")
-					RokaESPText.Visible = true
-					RokaESPText.Size = UDim2.new(1,0,1,0)
-					RokaESPText.BackgroundTransparency = 1
-					RokaESPText.ZIndex = 2
-					RokaESPText.Parent = RokaESPFrame
+	SlotToggleButton.Name = "SlotToggleButton"
+	SlotToggleButton.Parent = SlotToggleBackground
+	SlotToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	SlotToggleButton.BorderSizePixel = 0
+	SlotToggleButton.Position = UDim2.new(0, 0, 0.119999997, 0)
+	SlotToggleButton.Size = UDim2.new(0, 37, 0, 20)
+	SlotToggleButton.ZIndex = 93
+	SlotToggleButton.Font = Enum.Font.SourceSans
+	SlotToggleButton.Text = ""
+	SlotToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	SlotToggleButton.TextSize = 14.000
 
-				elseif v.Name == "Banknote" and not v.Handle:FindFirstChild("BillboardGui") then
+	local SlotToggleButtonCorner = Instance.new("UICorner")
 
-					if not ItemESPEnabled then return end
+	SlotToggleButtonCorner.Parent = SlotToggleButton
 
-					local MoneyESP = Instance.new("BillboardGui")
-					MoneyESP.AlwaysOnTop = true
-					MoneyESP.MaxDistance = math.huge
-					MoneyESP.Enabled = true
-					MoneyESP.Size = UDim2.new(2,0,2,0)
-					MoneyESP.Active = true
-					MoneyESP.Parent = v.Handle
+	-- Data Entry Format
 
-					local MoneyESPFrame = Instance.new("Frame")
-					MoneyESPFrame.BackgroundColor3 = Color3.new(0.333333, 1, 0)
-					MoneyESPFrame.Visible = true
-					MoneyESPFrame.Size = UDim2.new(1,0,1,0)
-					MoneyESPFrame.ZIndex = 1
-					MoneyESPFrame.BackgroundTransparency = 0.5
-					MoneyESPFrame.Parent = MoneyESP
+	local Entrybox = Instance.new("TextBox")
 
-					local MoneyESPText = Instance.new("TextLabel")
-					MoneyESPText.Text = "Money"
-					MoneyESPText.TextColor = BrickColor.new("White")
-					MoneyESPText.Visible = true
-					MoneyESPText.Size = UDim2.new(1,0,1,0)
-					MoneyESPText.BackgroundTransparency = 1
-					MoneyESPText.ZIndex = 2
-					MoneyESPText.Parent = MoneyESPFrame
+	Entrybox.Name = "Entrybox"
+	Entrybox.Parent = nil
+	Entrybox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	Entrybox.Position = UDim2.new(0.770562768, 0, 0.204545453, 0)
+	Entrybox.Size = UDim2.new(0, 74, 0, 25)
+	Entrybox.ZIndex = 7
+	Entrybox.Font = Enum.Font.SourceSans
+	Entrybox.Text = ""
+	Entrybox.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Entrybox.TextSize = 14.000
+	Entrybox.TextStrokeColor3 = Color3.fromRGB(0, 255, 0)
+	Entrybox.BorderColor3 = Color3.new(0, 0, 0)
 
-				elseif v.Name == "Frog" and not v.Handle:FindFirstChild("BillboardGui") then
+	--// A Bizarre Day
 
-					if not ItemESPEnabled then return end
+	GameTitle.Text = "A BIZARRE DAY GUI"
 
-					local FrogESP = Instance.new("BillboardGui")
-					FrogESP.AlwaysOnTop = true
-					FrogESP.MaxDistance = math.huge
-					FrogESP.Enabled = true
-					FrogESP.Size = UDim2.new(2,0,2,0)
-					FrogESP.Active = true
-					FrogESP.Parent = v.Handle
+	-- A Bizarre Day Script Requirements
 
-					local FrogESPFrame = Instance.new("Frame")
-					FrogESPFrame.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
-					FrogESPFrame.Visible = true
-					FrogESPFrame.Size = UDim2.new(1,0,1,0)
-					FrogESPFrame.ZIndex = 1
-					FrogESPFrame.BackgroundTransparency = 0.5
-					FrogESPFrame.Parent = FrogESP
+	local ItemESPEnabled = false
+	local PlayerESPEnabled = false
+	local NotifierEnabled = false
+	local AntiTSEnabled = false
+	local AdminNotifEnabled = false
 
-					local FrogESPText = Instance.new("TextLabel")
-					FrogESPText.Text = "Frog"
-					FrogESPText.TextColor = BrickColor.new("White")
-					FrogESPText.Visible = true
-					FrogESPText.Size = UDim2.new(1,0,1,0)
-					FrogESPText.BackgroundTransparency = 1
-					FrogESPText.ZIndex = 2
-					FrogESPText.Parent = FrogESPFrame
-				end
-			end
-		end
-	end)
+	-- Item ESP
 
-end)
+	local ItemESPBackground = SlotFormat:Clone()
+	ItemESPBackground.Parent = CheatArea
 
--- Player ESP
+	ItemESPBackground.Description.Text = "Item ESP:"
 
-local NonPlayerList = {
-	"Menacing Dummy",
-	"Enhanced Holodummy",
-	"Dummytaph",
-	"nado",
-	"Menacinger Dummy",
-	"Dio Brando",
-	"Vampiric Minion 1",
-	"Vampiric Minion 2",
-	"Funny Valentine",
-	"DIO"
-}
+	local ItemESPToggleMode = SlotToggleBackground:Clone()
+	ItemESPToggleMode.Parent = ItemESPBackground
 
-local PlayerESPBackground = SlotFormat:Clone()
-PlayerESPBackground.Parent = CheatArea
+	ItemESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 
-PlayerESPBackground.Description.Text = "Player ESP:"
+		if not ItemESPEnabled then
+			ItemESPEnabled = true
 
-local PlayerESPToggleMode = SlotToggleBackground:Clone()
-PlayerESPToggleMode.Parent = PlayerESPBackground
+			TS:Create(ItemESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
 
-PlayerESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
-	if not PlayerESPEnabled then 
-		PlayerESPEnabled = true
+			delay(0.5, function()
+				local Updater = Instance.new("Part") -- Updates the ESP
+				Updater.Parent = game:GetService("Workspace").ItFolder
+				Updater:Destroy()
+			end)
+		else
+			ItemESPEnabled = false
 
-		TS:Create(PlayerESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+			TS:Create(ItemESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
 
-		delay(0.5, function()
-			local Updater = Instance.new("Part") -- Updates the ESP
-			Updater.Parent = game:GetService("Workspace").Entities
-			Updater:Destroy()
-		end)
-	else
-		PlayerESPEnabled = false
-
-		TS:Create(PlayerESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
-		for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
-			if v.ClassName == "Model" then
-				if v:FindFirstChild("HumanoidRootPart") then
-					if v.HumanoidRootPart:FindFirstChild("BillboardGui") then
-						v.HumanoidRootPart.BillboardGui:Destroy()
+			for i, v in pairs(game:GetService("Workspace").ItFolder:GetChildren()) do
+				if v:FindFirstChild("Handle") then
+					if v.Handle:FindFirstChild("BillboardGui") then
+						v.Handle.BillboardGui:Destroy()
 					end
 				end
 			end
-		end	
-	end
-	game:GetService("Workspace").Entities.ChildAdded:Connect(function()
+		end
 
-		if not PlayerESPEnabled then return end
+		game:GetService("Workspace").ItFolder.ChildAdded:Connect(function()
 
-		for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+			if ItemESPEnabled then
 
-			if v.ClassName == "Model" then
-				if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Name ~= Character.Name and not table.find(NonPlayerList, v.Name) then
-					if not v.HumanoidRootPart:FindFirstChild("BillboardGui") then
+				for i, v in pairs(game:GetService("Workspace").ItFolder:GetChildren()) do -- Get all spawned items
+					if v.Name == "Arrow" and not v.Handle:FindFirstChild("BillboardGui") then
 
-						local PlayerESP = Instance.new("BillboardGui")
-						PlayerESP.AlwaysOnTop = true
-						PlayerESP.MaxDistance = math.huge
-						PlayerESP.Enabled = true
-						PlayerESP.Size = UDim2.new(2,0,2,0)
-						PlayerESP.Active = true
-						PlayerESP.Parent = v.HumanoidRootPart
+						if not ItemESPEnabled then return end
 
-						local PlayerESPFrame = Instance.new("Frame")
-						PlayerESPFrame.BackgroundColor3 = Color3.new(1, 1, 1)
-						PlayerESPFrame.Visible = true
-						PlayerESPFrame.Size = UDim2.new(1,0,1,0)
-						PlayerESPFrame.ZIndex = 1
-						PlayerESPFrame.BackgroundTransparency = 0.5
-						PlayerESPFrame.Parent = PlayerESP
+						local ArrowESP = Instance.new("BillboardGui")
+						ArrowESP.AlwaysOnTop = true
+						ArrowESP.MaxDistance = math.huge
+						ArrowESP.Enabled = true
+						ArrowESP.Size = UDim2.new(2,0,2,0)
+						ArrowESP.Active = true
+						ArrowESP.Parent = v.Handle
 
-						local PlayerESPText = Instance.new("TextLabel")
-						PlayerESPText.Text = v.Name
-						PlayerESPText.TextStrokeTransparency = 0
-						PlayerESPText.TextStrokeColor3 = Color3.new(0, 0, 0)
-						PlayerESPText.Visible = true
-						PlayerESPText.Size = UDim2.new(1,0,1,0)
-						PlayerESPText.BackgroundTransparency = 1
-						PlayerESPText.ZIndex = 2
-						PlayerESPText.Parent = PlayerESPFrame
-						
-						local GroupRole = Player:GetRoleInGroup(4516503)
+						local ArrowESPFrame = Instance.new("Frame")
+						ArrowESPFrame.BackgroundColor3 = Color3.new(1, 1, 0)
+						ArrowESPFrame.Visible = true
+						ArrowESPFrame.Size = UDim2.new(1,0,1,0)
+						ArrowESPFrame.ZIndex = 1
+						ArrowESPFrame.BackgroundTransparency = 0.5
+						ArrowESPFrame.Parent = ArrowESP
 
-						if GroupRole ~= "Member" and GroupRole ~= "Guest" then -- If high ranking it glows yellow
-							PlayerESPText.TextColor = BrickColor.new("Gold")
-						else
-							PlayerESPText.TextColor = BrickColor.new("White")
+						local ArrowESPText = Instance.new("TextLabel")
+						ArrowESPText.Text = "Arrow"
+						ArrowESPText.TextColor = BrickColor.new("White")
+						ArrowESPText.Size = UDim2.new(1,0,1,0)
+						ArrowESPText.BackgroundTransparency = 1
+						ArrowESPText.Visible = true
+						ArrowESPText.ZIndex = 2
+						ArrowESPText.Parent = ArrowESPFrame
+
+					elseif v.Name == "Requiem Arrow" and not v.Handle:FindFirstChild("BillboardGui") then
+
+						if not ItemESPEnabled then return end
+
+						local ReqArrowESP = Instance.new("BillboardGui")
+						ReqArrowESP.AlwaysOnTop = true
+						ReqArrowESP.MaxDistance = math.huge
+						ReqArrowESP.Enabled = true
+						ReqArrowESP.Size = UDim2.new(6,0,6,0)
+						ReqArrowESP.Active = true
+						ReqArrowESP.Parent = v.Handle
+
+						local ReqArrowESPImage = Instance.new("ImageLabel")
+						ReqArrowESPImage.Image = "http://www.roblox.com/asset/?id=2618549781"
+						ReqArrowESPImage.Visible = true
+						ReqArrowESPImage.Size = UDim2.new(1,0,1,0)
+						ReqArrowESPImage.BackgroundTransparency = 1
+						ReqArrowESPImage.Parent = ReqArrowESP
+
+						local ReqArrowESPText = Instance.new("TextLabel")
+						ReqArrowESPText.Text = "Requiem Arrow"
+						ReqArrowESPText.TextColor3 = Color3.new(1, 1, 0)
+						ReqArrowESPText.TextStrokeTransparency = 0
+						ReqArrowESPText.Visible = true
+						ReqArrowESPText.Size = UDim2.new(1,0,1,0)
+						ReqArrowESPText.BackgroundTransparency = 1
+						ReqArrowESPText.ZIndex = 2
+						ReqArrowESPText.Parent = ReqArrowESPImage
+
+					elseif v.Name == "Rokakaka Fruit" and not v.Handle:FindFirstChild("BillboardGui") then
+
+						if not ItemESPEnabled then return end
+
+						local RokaESP = Instance.new("BillboardGui")
+						RokaESP.AlwaysOnTop = true
+						RokaESP.MaxDistance = math.huge
+						RokaESP.Enabled = true
+						RokaESP.Size = UDim2.new(2,0,2,0)
+						RokaESP.Active = true
+						RokaESP.Parent = v.Handle
+
+						local RokaESPFrame = Instance.new("Frame")
+						RokaESPFrame.BackgroundColor3 = Color3.new(1, 0, 0)
+						RokaESPFrame.Visible = true
+						RokaESPFrame.ZIndex = 1
+						RokaESPFrame.Size = UDim2.new(1,0,1,0)
+						RokaESPFrame.BackgroundTransparency = 0.5
+						RokaESPFrame.Parent = RokaESP
+
+						local RokaESPText = Instance.new("TextLabel")
+						RokaESPText.Text = "Roka"
+						RokaESPText.TextColor = BrickColor.new("White")
+						RokaESPText.Visible = true
+						RokaESPText.Size = UDim2.new(1,0,1,0)
+						RokaESPText.BackgroundTransparency = 1
+						RokaESPText.ZIndex = 2
+						RokaESPText.Parent = RokaESPFrame
+
+					elseif v.Name == "Banknote" and not v.Handle:FindFirstChild("BillboardGui") then
+
+						if not ItemESPEnabled then return end
+
+						local MoneyESP = Instance.new("BillboardGui")
+						MoneyESP.AlwaysOnTop = true
+						MoneyESP.MaxDistance = math.huge
+						MoneyESP.Enabled = true
+						MoneyESP.Size = UDim2.new(2,0,2,0)
+						MoneyESP.Active = true
+						MoneyESP.Parent = v.Handle
+
+						local MoneyESPFrame = Instance.new("Frame")
+						MoneyESPFrame.BackgroundColor3 = Color3.new(0.333333, 1, 0)
+						MoneyESPFrame.Visible = true
+						MoneyESPFrame.Size = UDim2.new(1,0,1,0)
+						MoneyESPFrame.ZIndex = 1
+						MoneyESPFrame.BackgroundTransparency = 0.5
+						MoneyESPFrame.Parent = MoneyESP
+
+						local MoneyESPText = Instance.new("TextLabel")
+						MoneyESPText.Text = "Money"
+						MoneyESPText.TextColor = BrickColor.new("White")
+						MoneyESPText.Visible = true
+						MoneyESPText.Size = UDim2.new(1,0,1,0)
+						MoneyESPText.BackgroundTransparency = 1
+						MoneyESPText.ZIndex = 2
+						MoneyESPText.Parent = MoneyESPFrame
+
+					elseif v.Name == "Frog" and not v.Handle:FindFirstChild("BillboardGui") then
+
+						if not ItemESPEnabled then return end
+
+						local FrogESP = Instance.new("BillboardGui")
+						FrogESP.AlwaysOnTop = true
+						FrogESP.MaxDistance = math.huge
+						FrogESP.Enabled = true
+						FrogESP.Size = UDim2.new(2,0,2,0)
+						FrogESP.Active = true
+						FrogESP.Parent = v.Handle
+
+						local FrogESPFrame = Instance.new("Frame")
+						FrogESPFrame.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+						FrogESPFrame.Visible = true
+						FrogESPFrame.Size = UDim2.new(1,0,1,0)
+						FrogESPFrame.ZIndex = 1
+						FrogESPFrame.BackgroundTransparency = 0.5
+						FrogESPFrame.Parent = FrogESP
+
+						local FrogESPText = Instance.new("TextLabel")
+						FrogESPText.Text = "Frog"
+						FrogESPText.TextColor = BrickColor.new("White")
+						FrogESPText.Visible = true
+						FrogESPText.Size = UDim2.new(1,0,1,0)
+						FrogESPText.BackgroundTransparency = 1
+						FrogESPText.ZIndex = 2
+						FrogESPText.Parent = FrogESPFrame
+					end
+				end
+			end
+		end)
+
+	end)
+
+	-- Player ESP
+
+	local NonPlayerList = {
+		"Menacing Dummy",
+		"Enhanced Holodummy",
+		"Dummytaph",
+		"nado",
+		"Menacinger Dummy",
+		"Dio Brando",
+		"Vampiric Minion 1",
+		"Vampiric Minion 2",
+		"Funny Valentine",
+		"DIO"
+	}
+
+	local PlayerESPBackground = SlotFormat:Clone()
+	PlayerESPBackground.Parent = CheatArea
+
+	PlayerESPBackground.Description.Text = "Player ESP:"
+
+	local PlayerESPToggleMode = SlotToggleBackground:Clone()
+	PlayerESPToggleMode.Parent = PlayerESPBackground
+
+	PlayerESPToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
+		if not PlayerESPEnabled then 
+			PlayerESPEnabled = true
+
+			TS:Create(PlayerESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+
+			delay(0.5, function()
+				local Updater = Instance.new("Part") -- Updates the ESP
+				Updater.Parent = game:GetService("Workspace").Entities
+				Updater:Destroy()
+			end)
+		else
+			PlayerESPEnabled = false
+
+			TS:Create(PlayerESPToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+			for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+				if v.ClassName == "Model" then
+					if v:FindFirstChild("HumanoidRootPart") then
+						if v.HumanoidRootPart:FindFirstChild("BillboardGui") then
+							v.HumanoidRootPart.BillboardGui:Destroy()
 						end
-						
+					end
+				end
+			end	
+		end
+		game:GetService("Workspace").Entities.ChildAdded:Connect(function()
+
+			if not PlayerESPEnabled then return end
+
+			for i, v in pairs(game:GetService("Workspace").Entities:GetChildren()) do
+
+				if v.ClassName == "Model" then
+					if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Name ~= Character.Name and not table.find(NonPlayerList, v.Name) then
+						if not v.HumanoidRootPart:FindFirstChild("BillboardGui") then
+
+							local PlayerESP = Instance.new("BillboardGui")
+							PlayerESP.AlwaysOnTop = true
+							PlayerESP.MaxDistance = math.huge
+							PlayerESP.Enabled = true
+							PlayerESP.Size = UDim2.new(2,0,2,0)
+							PlayerESP.Active = true
+							PlayerESP.Parent = v.HumanoidRootPart
+
+							local PlayerESPFrame = Instance.new("Frame")
+							PlayerESPFrame.BackgroundColor3 = Color3.new(1, 1, 1)
+							PlayerESPFrame.Visible = true
+							PlayerESPFrame.Size = UDim2.new(1,0,1,0)
+							PlayerESPFrame.ZIndex = 1
+							PlayerESPFrame.BackgroundTransparency = 0.5
+							PlayerESPFrame.Parent = PlayerESP
+
+							local PlayerESPText = Instance.new("TextLabel")
+							PlayerESPText.Text = v.Name
+							PlayerESPText.TextStrokeTransparency = 0
+							PlayerESPText.TextStrokeColor3 = Color3.new(0, 0, 0)
+							PlayerESPText.Visible = true
+							PlayerESPText.Size = UDim2.new(1,0,1,0)
+							PlayerESPText.BackgroundTransparency = 1
+							PlayerESPText.ZIndex = 2
+							PlayerESPText.Parent = PlayerESPFrame
+
+							local GroupRole = Player:GetRoleInGroup(4516503)
+
+							if GroupRole ~= "Member" and GroupRole ~= "Guest" then -- If high ranking it glows yellow
+								PlayerESPText.TextColor = BrickColor.new("Gold")
+							else
+								PlayerESPText.TextColor = BrickColor.new("White")
+							end
+
+						end
 					end
 				end
 			end
-		end
-	end)
-end)
-
--- Item Notifier
-
-local ItemNotifBackground = SlotFormat:Clone()
-ItemNotifBackground.Parent = CheatArea
-
-ItemNotifBackground.Description.Text = "Rare Item Notifier:"
-
-local NotifierToggleMode = SlotToggleBackground:Clone()
-NotifierToggleMode.Parent = ItemNotifBackground
-
-NotifierToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
-
-	if not NotifierEnabled then
-		NotifierEnabled = true
-
-		TS:Create(NotifierToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
-
-	else
-		NotifierEnabled = false
-
-		TS:Create(NotifierToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
-	end
-	game:GetService("Workspace").ItFolder.ChildAdded:Connect(function(Child)
-
-		if not NotifierEnabled then return end
-
-		local NotifierNotice = Notice:Clone()
-		NotifierNotice.Parent = Notice.Parent
-
-		if Child.Name == "Requiem Arrow" then -- Try and play a sound
-			NotifierNotice.Text = "A ".. Child.Name.. " has spawned!"
-			NotifierNotice.Visible = true
-
-			delay(15, function()
-				NotifierNotice.Visible = false
-				NotifierNotice:Destroy()
-			end)
-		end
-
-	end)
-end)
-
--- Anti TS
-
-local AntiTSBackground = SlotFormat:Clone()
-AntiTSBackground.Parent = CheatArea
-
-AntiTSBackground.Description.Text = "Anti Timestop:"
-
-local AntiTSToggleMode = SlotToggleBackground:Clone()
-AntiTSToggleMode.Parent = AntiTSBackground
-
-AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
-
-	if not AntiTSEnabled then
-		AntiTSEnabled = true
-
-		TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
-		Lighting:WaitForChild("TS").Value = false -- Updates it
-		Lighting:WaitForChild("Timestop").Value = false
-
-	else
-		AntiTSEnabled = false
-
-		TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
-	end
-
-	local TSValue = Lighting:WaitForChild("TS")
-	local TSLighting = Lighting:WaitForChild("Timestop")
-
-	TSValue.Changed:Connect(function()
-		if AntiTSEnabled and TSValue.Value == true then
-			TSValue.Value = false
-			TSLighting.Enabled = false
-
-			local TSNotice = Notice:Clone()
-			TSNotice.Parent = Notice.Parent
-			TSNotice.Text = "A TimeStop was activated"
-			TSNotice.Visible = true
-			delay(5, function()
-				TSNotice:Destroy()
-			end)
-		end
+		end)
 	end)
 
-end)
+	-- Item Notifier
 
--- Admin Notifier
+	local ItemNotifBackground = SlotFormat:Clone()
+	ItemNotifBackground.Parent = CheatArea
 
-local AdminNotifBackground = SlotFormat:Clone()
-AdminNotifBackground.Parent = CheatArea
+	ItemNotifBackground.Description.Text = "Rare Item Notifier:"
 
-AdminNotifBackground.Description.Text = "Admin Notifier:"
+	local NotifierToggleMode = SlotToggleBackground:Clone()
+	NotifierToggleMode.Parent = ItemNotifBackground
 
-local AdminNotifToggleMode = SlotToggleBackground:Clone()
-AdminNotifToggleMode.Parent = AdminNotifBackground
+	NotifierToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
 
-AdminNotifToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
+		if not NotifierEnabled then
+			NotifierEnabled = true
 
-	if not AdminNotifEnabled then
-		AdminNotifEnabled = true
-		
-		for i, v in pairs(Players:GetChildren()) do
-			local Role = Player:GetRoleInGroup(4516503)
-			
-			if Role ~= "Member" and Role ~= "Guest" then -- If they are in group and they are not lowest ranking
+			TS:Create(NotifierToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+
+		else
+			NotifierEnabled = false
+
+			TS:Create(NotifierToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+		end
+		game:GetService("Workspace").ItFolder.ChildAdded:Connect(function(Child)
+
+			if not NotifierEnabled then return end
+
+			local NotifierNotice = Notice:Clone()
+			NotifierNotice.Parent = Notice.Parent
+
+			if Child.Name == "Requiem Arrow" then -- Try and play a sound
+				NotifierNotice.Text = "A ".. Child.Name.. " has spawned!"
+				NotifierNotice.Visible = true
+
+				delay(15, function()
+					NotifierNotice.Visible = false
+					NotifierNotice:Destroy()
+				end)
+			end
+
+		end)
+	end)
+
+	-- Anti TS
+
+	local AntiTSBackground = SlotFormat:Clone()
+	AntiTSBackground.Parent = CheatArea
+
+	AntiTSBackground.Description.Text = "Anti Timestop:"
+
+	local AntiTSToggleMode = SlotToggleBackground:Clone()
+	AntiTSToggleMode.Parent = AntiTSBackground
+
+	AntiTSToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
+
+		if not AntiTSEnabled then
+			AntiTSEnabled = true
+
+			TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+			Lighting:WaitForChild("TS").Value = false -- Updates it
+			Lighting:WaitForChild("Timestop").Value = false
+
+		else
+			AntiTSEnabled = false
+
+			TS:Create(AntiTSToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+		end
+
+		local TSValue = Lighting:WaitForChild("TS")
+		local TSLighting = Lighting:WaitForChild("Timestop")
+
+		TSValue.Changed:Connect(function()
+			if AntiTSEnabled and TSValue.Value == true then
+				TSValue.Value = false
+				TSLighting.Enabled = false
+
+				local TSNotice = Notice:Clone()
+				TSNotice.Parent = Notice.Parent
+				TSNotice.Text = "A TimeStop was activated"
+				TSNotice.Visible = true
+				delay(5, function()
+					TSNotice:Destroy()
+				end)
+			end
+		end)
+
+	end)
+
+	-- Admin Notifier
+
+	local AdminNotifBackground = SlotFormat:Clone()
+	AdminNotifBackground.Parent = CheatArea
+
+	AdminNotifBackground.Description.Text = "Admin Notifier:"
+
+	local AdminNotifToggleMode = SlotToggleBackground:Clone()
+	AdminNotifToggleMode.Parent = AdminNotifBackground
+
+	AdminNotifToggleMode.SlotToggleButton.MouseButton1Click:Connect(function()
+
+		if not AdminNotifEnabled then
+			AdminNotifEnabled = true
+
+			for i, v in pairs(Players:GetChildren()) do
+				local Role = Player:GetRoleInGroup(4516503)
+
+				if Role ~= "Member" and Role ~= "Guest" then -- If they are in group and they are not lowest ranking
+					local AdminNotice = Notice:Clone()
+					AdminNotice.Text = Player.Name.." is in this lobby. ("..Role..")"
+					AdminNotice.Parent = Notice.Parent
+					AdminNotice.Visible = true
+					delay(15, function()
+						AdminNotice:Destroy()
+					end)
+				end
+			end
+
+			TS:Create(AdminNotifToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+
+		else
+			AdminNotifEnabled = false
+
+			TS:Create(AdminNotifToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+		end
+
+		Players.PlayerAdded:Connect(function(Player)
+
+			if not AdminNotifEnabled then return end
+
+			local PlayerRole = Player:GetRoleInGroup(4516503)
+			if PlayerRole ~= "Member" and PlayerRole ~= "Guest" then -- If they are in group and they are not lowest ranking
 				local AdminNotice = Notice:Clone()
-				AdminNotice.Text = Player.Name.." is in this lobby. ("..Role..")"
+				AdminNotice.Text = Player.Name.." has joined. ("..PlayerRole..")"
 				AdminNotice.Parent = Notice.Parent
 				AdminNotice.Visible = true
 				delay(15, function()
 					AdminNotice:Destroy()
 				end)
 			end
-		end
 
-		TS:Create(AdminNotifToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0.12, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+		end)	
+	end)
 
-	else
-		AdminNotifEnabled = false
+	-- SpeedHacks
 
-		TS:Create(AdminNotifToggleMode.SlotToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0.12, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
-	end
+	local SpeedHackBackground = SlotFormat:Clone()
+	SpeedHackBackground.Parent = CheatArea
 
-	Players.PlayerAdded:Connect(function(Player)
+	local SpeedEntryBox = Entrybox:Clone()
+	SpeedEntryBox.Parent = SpeedHackBackground
 
-		if not AdminNotifEnabled then return end
-		
-		local PlayerRole = Player:GetRoleInGroup(4516503)
-		if PlayerRole ~= "Member" and PlayerRole ~= "Guest" then -- If they are in group and they are not lowest ranking
-			local AdminNotice = Notice:Clone()
-			AdminNotice.Text = Player.Name.." has joined. ("..PlayerRole..")"
-			AdminNotice.Parent = Notice.Parent
-			AdminNotice.Visible = true
-			delay(15, function()
-				AdminNotice:Destroy()
-			end)
-		end
-		
-	end)	
-end)
+	SpeedHackBackground.Description.Text = "Walk Speed:"
 
--- SpeedHacks
+	SpeedEntryBox:GetPropertyChangedSignal("Text"):Connect(function()
 
-local SpeedHackBackground = SlotFormat:Clone()
-SpeedHackBackground.Parent = CheatArea
+		if not tonumber(SpeedEntryBox.Text) then return end -- Makes Sure the entry is a number
 
-local SpeedEntryBox = Entrybox:Clone()
-SpeedEntryBox.Parent = SpeedHackBackground
+		Humanoid.WalkSpeed = tonumber(SpeedEntryBox.Text)
 
-SpeedHackBackground.Description.Text = "Walk Speed:"
+	end)
 
-SpeedEntryBox:GetPropertyChangedSignal("Text"):Connect(function()
+	-- JumpHacks
 
-	if not tonumber(SpeedEntryBox.Text) then return end -- Makes Sure the entry is a number
+	local JumpHackBackground = SlotFormat:Clone()
+	JumpHackBackground.Parent = CheatArea
 
-	Humanoid.WalkSpeed = tonumber(SpeedEntryBox.Text)
+	local JumpEntryBox = Entrybox:Clone()
+	JumpEntryBox.Parent = JumpHackBackground
 
-end)
+	JumpHackBackground.Description.Text = "Jump Height:"
 
--- JumpHacks
+	JumpEntryBox:GetPropertyChangedSignal("Text"):Connect(function()
 
-local JumpHackBackground = SlotFormat:Clone()
-JumpHackBackground.Parent = CheatArea
+		if not tonumber(JumpEntryBox.Text) then return end -- Makes Sure the entry is a number
 
-local JumpEntryBox = Entrybox:Clone()
-JumpEntryBox.Parent = JumpHackBackground
+		Humanoid.JumpPower = tonumber(JumpEntryBox.Text)
+		Humanoid.JumpHeight = tonumber(JumpEntryBox.Text)
 
-JumpHackBackground.Description.Text = "Jump Height:"
+	end)
 
-JumpEntryBox:GetPropertyChangedSignal("Text"):Connect(function()
+	--// Settings
 
-	if not tonumber(JumpEntryBox.Text) then return end -- Makes Sure the entry is a number
+	--local SettingsClicked = false
+	--local ClickDebounce = false
 
-	Humanoid.JumpPower = tonumber(JumpEntryBox.Text)
-	Humanoid.JumpHeight = tonumber(JumpEntryBox.Text)
+	--SettingsButton.MouseEnter:Connect(function()
 
-end)
+	--	if ClickDebounce then repeat task.wait() until not ClickDebounce end
 
---// Settings
+	--	if SettingsClicked then
+	--		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 390, ImageTransparency = 0.3}):Play()
+	--	else
+	--		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
+	--	end
+	--end)
 
---local SettingsClicked = false
---local ClickDebounce = false
+	--SettingsButton.MouseLeave:Connect(function()
 
---SettingsButton.MouseEnter:Connect(function()
-	
---	if ClickDebounce then repeat task.wait() until not ClickDebounce end
-	
---	if SettingsClicked then
---		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 390, ImageTransparency = 0.3}):Play()
---	else
---		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 30, ImageTransparency = 0.3}):Play()
---	end
---end)
+	--	if ClickDebounce then repeat task.wait() until not ClickDebounce end
 
---SettingsButton.MouseLeave:Connect(function()
-	
---	if ClickDebounce then repeat task.wait() until not ClickDebounce end
-	
---	if SettingsClicked then
---		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 360, ImageTransparency = 0.7}):Play()
---	else
---		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
---	end
---end)
+	--	if SettingsClicked then
+	--		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 360, ImageTransparency = 0.7}):Play()
+	--	else
+	--		TS:Create(SettingsButton, TweenInfo.new(0.5), {Rotation = 0, ImageTransparency = 0.7}):Play()
+	--	end
+	--end)
 
---SettingsButton.MouseButton1Click:Connect(function()
-	
---	if ClickDebounce then return end
-	
---	if SettingsClicked then -- Toggle
---		SettingsClicked = false -- Open
---		ClickDebounce = true
---		TS:Create(SettingsButton, TweenInfo.new(1), {Rotation = 30, Position = UDim2.new(1, -80, 1, -80)}):Play()
---		TS:Create(SettingsBackground, TweenInfo.new(1), {Position = SettingsClosedPos}):Play()
-		
---		delay(1, function()
---			ClickDebounce = false
---		end)
---	else
---		SettingsClicked = true -- Close
---		ClickDebounce = true
---		TS:Create(SettingsButton, TweenInfo.new(1), {Rotation = 390, Position = UDim2.new(0.843, -80, 1, -80)}):Play()
---		TS:Create(SettingsBackground, TweenInfo.new(1), {Position = SettingsOpenPos}):Play()
-		
---		delay(1, function()
---			ClickDebounce = false
---		end)
---	end
---end)
+	--SettingsButton.MouseButton1Click:Connect(function()
 
----- Actual Setting Control
+	--	if ClickDebounce then return end
 
---local MemorySpoofEnabled = false
---local AntiClientKickEnabled = false
---local FPSCounterEnabled = false
+	--	if SettingsClicked then -- Toggle
+	--		SettingsClicked = false -- Open
+	--		ClickDebounce = true
+	--		TS:Create(SettingsButton, TweenInfo.new(1), {Rotation = 30, Position = UDim2.new(1, -80, 1, -80)}):Play()
+	--		TS:Create(SettingsBackground, TweenInfo.new(1), {Position = SettingsClosedPos}):Play()
 
----- Scripts for Settings
+	--		delay(1, function()
+	--			ClickDebounce = false
+	--		end)
+	--	else
+	--		SettingsClicked = true -- Close
+	--		ClickDebounce = true
+	--		TS:Create(SettingsButton, TweenInfo.new(1), {Rotation = 390, Position = UDim2.new(0.843, -80, 1, -80)}):Play()
+	--		TS:Create(SettingsBackground, TweenInfo.new(1), {Position = SettingsOpenPos}):Play()
 
---local MemorySpoofFunction = coroutine.create(function()
---	hookfunction((gcinfo or collectgarbage), function(...) -- Hook gcinfo or collectgarbage
---		return math.random(200,350) -- Always return a legit looking value
---	end)
---end)
+	--		delay(1, function()
+	--			ClickDebounce = false
+	--		end)
+	--	end
+	--end)
 
---local AntiClientKickFunction = coroutine.create(function() -- To bypass this, a dev can kick server side or delete the player with a script
---	hookfunction(game:GetService("Players").LocalPlayer.Kick, function(...) -- Hook LocalPlayer.Kick
---		return wait(math.huge) -- Return an infinite wait, this is mostly because some devs prefer to crash the game after kicking
---	end)
---end)
+	---- Actual Setting Control
 
---local FPSCounterFunction = coroutine.create(function()
---	local FpsLabel = FPSCounterText
+	--local MemorySpoofEnabled = false
+	--local AntiClientKickEnabled = false
+	--local FPSCounterEnabled = false
 
---	local TimeFunction = RunService:IsRunning() and time or os.clock
+	---- Scripts for Settings
 
---	local LastIteration, Start
---	local FrameUpdateTable = {}
+	--local MemorySpoofFunction = coroutine.create(function()
+	--	hookfunction((gcinfo or collectgarbage), function(...) -- Hook gcinfo or collectgarbage
+	--		return math.random(200,350) -- Always return a legit looking value
+	--	end)
+	--end)
 
---	local function HeartbeatUpdate()
---		LastIteration = TimeFunction()
---		for Index = #FrameUpdateTable, 1, -1 do
---			FrameUpdateTable[Index + 1] = FrameUpdateTable[Index] >= LastIteration - 1 and FrameUpdateTable[Index] or nil
---		end
+	--local AntiClientKickFunction = coroutine.create(function() -- To bypass this, a dev can kick server side or delete the player with a script
+	--	hookfunction(game:GetService("Players").LocalPlayer.Kick, function(...) -- Hook LocalPlayer.Kick
+	--		return wait(math.huge) -- Return an infinite wait, this is mostly because some devs prefer to crash the game after kicking
+	--	end)
+	--end)
 
---		FrameUpdateTable[1] = LastIteration
---		FpsLabel.Text = tostring(math.floor(TimeFunction() - Start >= 1 and #FrameUpdateTable or #FrameUpdateTable / (TimeFunction() - Start)))
---	end
+	--local FPSCounterFunction = coroutine.create(function()
+	--	local FpsLabel = FPSCounterText
 
---	Start = TimeFunction()
---	RunService.Heartbeat:Connect(HeartbeatUpdate)
---end)
+	--	local TimeFunction = RunService:IsRunning() and time or os.clock
 
----- Memory Spoof
+	--	local LastIteration, Start
+	--	local FrameUpdateTable = {}
 
---MemoryToggleButton.MouseButton1Click:Connect(function()
+	--	local function HeartbeatUpdate()
+	--		LastIteration = TimeFunction()
+	--		for Index = #FrameUpdateTable, 1, -1 do
+	--			FrameUpdateTable[Index + 1] = FrameUpdateTable[Index] >= LastIteration - 1 and FrameUpdateTable[Index] or nil
+	--		end
 
---	if not MemorySpoofEnabled then
---		MemorySpoofEnabled = true
+	--		FrameUpdateTable[1] = LastIteration
+	--		FpsLabel.Text = tostring(math.floor(TimeFunction() - Start >= 1 and #FrameUpdateTable or #FrameUpdateTable / (TimeFunction() - Start)))
+	--	end
 
---		TS:Create(MemoryToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
---		coroutine.resume(MemorySpoofFunction)
---	else
---		MemorySpoofEnabled = false
+	--	Start = TimeFunction()
+	--	RunService.Heartbeat:Connect(HeartbeatUpdate)
+	--end)
 
---		TS:Create(MemoryToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
---		coroutine.yield(MemorySpoofFunction)
---	end
+	---- Memory Spoof
 
---end)
+	--MemoryToggleButton.MouseButton1Click:Connect(function()
 
----- Anti Client Kick
+	--	if not MemorySpoofEnabled then
+	--		MemorySpoofEnabled = true
 
---KickToggleButton.MouseButton1Click:Connect(function()
+	--		TS:Create(MemoryToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+	--		coroutine.resume(MemorySpoofFunction)
+	--	else
+	--		MemorySpoofEnabled = false
 
---	if not AntiClientKickEnabled then
---		AntiClientKickEnabled = true
+	--		TS:Create(MemoryToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+	--		coroutine.yield(MemorySpoofFunction)
+	--	end
 
---		TS:Create(KickToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
---		coroutine.resume(AntiClientKickFunction)
---	else
---		AntiClientKickEnabled = false
+	--end)
 
---		TS:Create(KickToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
---		coroutine.yield(AntiClientKickFunction)
---	end
+	---- Anti Client Kick
 
---end)
+	--KickToggleButton.MouseButton1Click:Connect(function()
 
----- FPS Counter
+	--	if not AntiClientKickEnabled then
+	--		AntiClientKickEnabled = true
 
---FPSToggleButton.MouseButton1Click:Connect(function()
+	--		TS:Create(KickToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+	--		coroutine.resume(AntiClientKickFunction)
+	--	else
+	--		AntiClientKickEnabled = false
 
---	if not FPSCounterEnabled then
---		FPSCounterEnabled = true
+	--		TS:Create(KickToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+	--		coroutine.yield(AntiClientKickFunction)
+	--	end
 
---		TS:Create(FPSToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
---		FPSCounterText.Visible = true
---		coroutine.resume(FPSCounterFunction)
---	else
---		FPSCounterEnabled = false
+	--end)
 
---		TS:Create(FPSToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
---		FPSCounterText.Visible = false
---	end
+	---- FPS Counter
 
---end)
+	--FPSToggleButton.MouseButton1Click:Connect(function()
 
---// Scrolling Gui Auto Scale
+	--	if not FPSCounterEnabled then
+	--		FPSCounterEnabled = true
 
-MainGuiLoaded = true
+	--		TS:Create(FPSToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0.5, 0, 0, 0), BackgroundColor3 = Color3.new(0, 1, 0)}):Play()
+	--		FPSCounterText.Visible = true
+	--		coroutine.resume(FPSCounterFunction)
+	--	else
+	--		FPSCounterEnabled = false
 
-coroutine.resume(FrameCheck)
+	--		TS:Create(FPSToggleButton, TweenInfo.new(0.5), {Position = UDim2.new(0, 0, 0, 0), BackgroundColor3 = Color3.new(1, 0, 0)}):Play()
+	--		FPSCounterText.Visible = false
+	--	end
+
+	--end)
+
+	--// Scrolling Gui Auto Scale
+
+	MainGuiLoaded = true
+
+	coroutine.resume(FrameCheck)
+end
